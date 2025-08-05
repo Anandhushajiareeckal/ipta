@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
+
+
+
+// Route::get('/', function () {
+//     return view('layouts.app');
+// });
 
 // Route::get('/', function () {
 //     return view('admin.layouts.app');
