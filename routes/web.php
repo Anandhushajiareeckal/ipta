@@ -15,16 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
 
+//about us
+Route::get('/about-us', [App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
 
 
 
-// Route::get('/', function () {
-//     return view('layouts.app');
-// });
-
-// Route::get('/', function () {
-//     return view('admin.layouts.app');
-// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
