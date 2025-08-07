@@ -19,8 +19,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Grouped about routes
     Route::prefix('about')->name('about.')->group(function () {
         Route::get('/', [App\Http\Controllers\Admin\AboutController::class, 'edit'])->name('edit');
-        Route::get('/update', [App\Http\Controllers\Admin\AboutController::class, 'update'])->name('update');
+        Route::post('/update', [App\Http\Controllers\Admin\AboutController::class, 'update'])->name('update');
     });
 
+
+    Route::prefix('news')->name('news.')->group(function () {
+        Route::get('/', [App\Http\Controllers\Admin\NewsController::class, 'edit'])->name('edit');
+        Route::post('/update', [App\Http\Controllers\Admin\NewsController::class, 'update'])->name('update');
+    });
     
+    //resource rout for news
+    Route::resource('news', App\Http\Controllers\Admin\NewsController::class);
+
 }); 

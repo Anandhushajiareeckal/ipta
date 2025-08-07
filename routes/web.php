@@ -16,9 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
 
 //about us
-Route::get('/about-us', [App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
+    Route::get('/about-us', [App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
 
-
+    Route::get('/news', [App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('news');
+    
+    Route::get('/news/{slug}', [App\Http\Controllers\Frontend\NewsController::class, 'show'])->name('news.show');
 
 
 Route::get('/dashboard', function () {

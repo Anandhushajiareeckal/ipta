@@ -24,6 +24,8 @@
     <link href="{{ asset('assets/backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
     @toastr_css
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.css" rel="stylesheet">
+
     @yield('css')
     
 </head>
@@ -474,8 +476,9 @@
                     </div>
 
                     <div class="dropdown d-inline-block">
-                        {{--  <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                            <i class="bx bx-cog bx-spin"></i>
+                        {{--  <button type="button" class="btn header-item noti-icon waves-effect"
+                            data-toggle="fullscreen">
+                            <i class="bx bx-fullscreen"></i>
                         </button>  --}}
                     </div>
 
@@ -553,8 +556,9 @@
         </script>
         {{-- @notify_js
         @notify_render --}}
-        @yield('script')
-
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-lite.min.js"></script>
+        @stack('script')
 </body>
 
 </html>

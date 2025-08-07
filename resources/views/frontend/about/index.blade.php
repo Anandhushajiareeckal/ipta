@@ -11,15 +11,14 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="header-page-locator">
                             <ul>
-                                <li><a href="{{ asset('index.html') }}">Home <i class="fa fa-compress" aria-hidden="true"></i> </a> About</li>
+                                <li><a href="{{ asset('') }}">Home <i class="fa fa-compress" aria-hidden="true"></i> </a> About</li>
                             </ul>
                         </div>
                         <div class="header-page-title">
-                            <h1>About</h1>
+                            <h1>{{$data->banner_head}}</h1>
                         </div>
                         <div class="header-page-subtitle">
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                                <br>alteration in some form, by injected humou</p>
+                            <p>{{$data->banner_description}}</p>
                         </div>
                     </div>
                 </div>
@@ -33,22 +32,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h2 class="title2">What we are </h2>
+                    <h2 class="title2">{{$data->main_head}} </h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridicu lus mus. Quisque facilisis placerat dignissim. Suspendisse quis lacin libero. Vivamus augue mauris, facilisis nec mollis ac, volutpat quis sem. iCras porta ligula eget sem blandit posuere. 
-                    </p>
-
-                    <p>Duis facilisis ultrices augue et bibendum. Proin vitae libero on ultricies, fermentum ex eget, varius arcu. Duis facilisis ultrices augue et bibendum. Proin vitae libero on ultricies, fermentum ex eget, varius arcu. Praesent in quam in ipsumtem egestas. Ut pulvinar orci eleifend, cursus ex vel, dignissim diam. Proin the tincidunt mi ac quam semper efficitur. </p>
-
-                    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridicu lus mus. Quisque facilisis placerat dignissim. Suspendisse quis lacin libero. Vivamus augue mauris, facilisis nec mollis ac, volutpat quis sem. iCras porta ligula eget sem blandit posuere.
-                    </p>
-
+                    <p>{{$data->main_description}}</p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <p><img src="{{ asset('assets/frontend/images/about/2.jpg') }}" alt="News24 office"></p>
+                    <p><img src="{{ asset('storage/' . $data->main_image) }}" alt="News24 office"></p>
                 </div>
             </div>
         </div>
@@ -60,11 +52,11 @@
             <div class="row">
                 <div class="home-page-core-activities-area">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                        <span class="border-img"><img class="normal" src="{{ asset('assets/frontend/images/about/1.jpg') }}" alt="about"></span>
+                        <span class="border-img"><img class="normal" src="{{ asset('storage/' . $data->image_2) }}" alt="about"></span>
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                         <div class="home-activities-area">
-                            <h2 class="title2">Our Features</h2>
+                            <h2 class="title2">{{$data->head_2}}</h2>
                             <div class="single-activities">
                                 <div class="media">
                                     <div class="pull-left">
@@ -73,8 +65,8 @@
                                         </a>
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="media-heading"><a href="#">Expert Staff</a></h4>
-                                        <p>Praesent faucibus neque nisi, vel pharetra justo mattis non. Curabitur mentum, urna fermentum aliquet rhoncus, urna lacus consequat nunc.</p>
+                                        <h4 class="media-heading"><a href="#">{{$data->sub_head_1}}</a></h4>
+                                        <p>{{$data->sub_desc_1}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -86,8 +78,8 @@
                                         </a>
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="media-heading"><a href="#">Worldwide Locations </a></h4>
-                                        <p>Praesent faucibus neque nisi, vel pharetra justo mattis non. Curabitur mentum, urna fermentum aliquet rhoncus, urna lacus consequat nunc.</p>
+                                        <h4 class="media-heading"><a href="#">{{$data->sub_head_2}} </a></h4>
+                                        <p>{{$data->sub_desc_2}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -99,8 +91,8 @@
                                         </a>
                                     </div>
                                     <div class="media-body">
-                                        <h4 class="media-heading"><a href="#">Huge storage</a></h4>
-                                        <p>Praesent faucibus neque nisi, vel pharetra justo mattis non. Curabitur mentum, urna fermentum aliquet rhoncus, urna lacus consequat nunc.</p>
+                                        <h4 class="media-heading"><a href="#">{{$data->sub_head_3}}</a></h4>
+                                        <p>{{$data->sub_desc_3}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -120,8 +112,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-3  wow fadeInUp" data-wow-duration=".3s" data-wow-delay="300ms" style="visibility: visible; animation-duration: .3s; animation-delay: .5s; animation-name: fadeInUp;">
                         <div class="about-counter-list">
                             <p class="icons"><i class="fa fa-line-chart" aria-hidden="true"></i></p>
-                            <h1 class="about-counter">125400</h1>
-                            <p>Years in Marketing</p>
+                            <h1 class="about-counter">{{$data->rank_value_1}}</h1>
+                            <p>{{$data->rank_text_1}}</p>
                         </div>
                     </div>
                     <!-- ABOUT-COUNTER-LIST END -->
@@ -129,8 +121,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-3  wow fadeInUp" data-wow-duration=".7s" data-wow-delay="300ms" style="visibility: visible; animation-duration: .7s; animation-delay: .7s; animation-name: fadeInUp;">
                         <div class="about-counter-list">
                             <p class="icons"><i class="fa fa-users" aria-hidden="true"></i></p>
-                            <h1 class="about-counter">20</h1>
-                            <p>Team Member</p>
+                            <h1 class="about-counter">{{$data->rank_value_2}}</h1>
+                            <p>{{$data->rank_text_2}}</p>
                         </div>
                     </div>
                     <!-- ABOUT-COUNTER-LIST END -->
@@ -138,8 +130,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-3  wow fadeInUp" data-wow-duration=".9s" data-wow-delay="300ms" style="visibility: visible; animation-duration: .9s; animation-delay: .9s; animation-name: fadeInUp;">
                         <div class="about-counter-list">
                             <p class="icons"><i class="fa fa-bookmark" aria-hidden="true"></i></p>
-                            <h1 class="about-counter">22</h1>
-                            <p>Certification</p>
+                            <h1 class="about-counter">{{$data->rank_value_3}}</h1>
+                            <p>Cert{{$data->rank_text_3}}ification</p>
                         </div>
                     </div>
                     <!-- ABOUT-COUNTER-LIST END -->
@@ -147,8 +139,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-3  wow fadeInUp" data-wow-duration="1.2s" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1.2s; animation-delay: 1.2s; animation-name: fadeInUp;">
                         <div class="about-counter-list">
                             <p class="icons"><i class="fa fa-hand-peace-o" aria-hidden="true"></i></p>
-                            <h1 class="about-counter">200,000</h1>
-                            <p>Happy Cleints </p>
+                            <h1 class="about-counter">{{$data->rank_value_4}}</h1>
+                            <p>{{$data->rank_text_4}} </p>
                         </div>
                     </div>
                     <!-- ABOUT-COUNTER-LIST END -->
@@ -158,7 +150,7 @@
     </div>
     <!-- Counter Down Section End Here-->
     <!-- Home Page team start  here -->
-    <div class="about-page-team">
+    {{-- <div class="about-page-team">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -308,5 +300,5 @@
                 </div>    
             </div>
         </div>
-    </div>
-    <!-- Home Page team end  here --
+    </div> --}}
+    <!-- Home Page team end  here --    

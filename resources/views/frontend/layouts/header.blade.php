@@ -123,6 +123,7 @@
 
 
                                 <li><a href="{{route('about')}}" class="has">About </i></a></li>
+                                <li><a href="{{route('news')}}" class="has">News </i></a></li>
 
 
 
