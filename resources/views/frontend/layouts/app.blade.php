@@ -48,7 +48,6 @@
 
     <!--Header area start here-->
     @include('frontend.layouts.header')
-    <div id="google_translate_element"></div>
 
     @yield('content')
 
