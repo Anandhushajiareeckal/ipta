@@ -71,6 +71,7 @@
 
                                 <li><a href="{{ route('about') }}" class="has">About </i></a></li>
                                 <li><a href="{{ route('news') }}" class="has">News </i></a></li>
+                                <li><a href="{{ route('articles') }}" class="has">Articles </i></a></li>
                             </ul>
                         </nav>
                     </div>

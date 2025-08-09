@@ -19,9 +19,13 @@ Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])-
     Route::get('/about-us', [App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
 
     Route::get('/news', [App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('news');
-    
+
     Route::get('/news/{slug}', [App\Http\Controllers\Frontend\NewsController::class, 'show'])->name('news.show');
 
+
+Route::get('/articles', [\App\Http\Controllers\Frontend\ArticleController::class, 'index'])->name('articles');
+
+Route::get('/articles/{slug}', [\App\Http\Controllers\Frontend\ArticleController::class, 'show'])->name('articles.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

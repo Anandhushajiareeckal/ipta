@@ -30,5 +30,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
     
     //resource rout for news
     Route::resource('news', App\Http\Controllers\Admin\NewsController::class);
-
+     Route::resource('articles', \App\Http\Controllers\Admin\ArticleController::class);
 }); 

@@ -31,6 +31,13 @@
                         <span key="t-ecommerce">News</span>
                     </a>
                 </li>
+                {{-- Articles --}}
+                <li>
+                    <a href="{{ route('admin.articles.index') }}" class=" waves-effect">
+                        <i class="bx bx-book"></i>
+                        <span key="t-ecommerce">Articles</span>
+                    </a>
+                </li>
                 
             </ul>
         </div>
