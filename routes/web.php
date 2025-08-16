@@ -27,6 +27,21 @@ Route::get('/articles', [\App\Http\Controllers\Frontend\ArticleController::class
 
 Route::get('/articles/{slug}', [\App\Http\Controllers\Frontend\ArticleController::class, 'show'])->name('articles.show');
 
+
+Route::get('/events', [\App\Http\Controllers\Frontend\EventController::class, 'index'])->name('events');
+
+Route::get('/event/{slug}', [\App\Http\Controllers\Frontend\EventController::class, 'show'])->name('events.show');
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

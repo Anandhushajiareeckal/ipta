@@ -14,11 +14,11 @@
 
                 <!-- <li class="menu-title" key="t-apps">Pages</li> -->
 
-                
+
 
                 {{-- About --}}
                 <li>
-                    <a href="{{route('admin.about.edit')}}" class=" waves-effect">
+                    <a href="{{ route('admin.about.edit') }}" class=" waves-effect">
                         <i class="bx bx-list-check"></i>
                         <span key="t-ecommerce">About</span>
                     </a>
@@ -38,7 +38,15 @@
                         <span key="t-ecommerce">Articles</span>
                     </a>
                 </li>
-                
+
+                {{-- Events --}}
+                <li>
+                    <a href="{{ route('admin.events.index') }}" class=" waves-effect">
+                        <i class="bx bx-calendar"></i>
+                        <span key="t-ecommerce">Events</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>
