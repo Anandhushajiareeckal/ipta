@@ -28,12 +28,19 @@ Route::get('/articles', [\App\Http\Controllers\Frontend\ArticleController::class
 Route::get('/articles/{slug}', [\App\Http\Controllers\Frontend\ArticleController::class, 'show'])->name('articles.show');
 
 
-Route::get('/events', [\App\Http\Controllers\Frontend\EventController::class, 'index'])->name('events');
 
+Route::get('/events', [\App\Http\Controllers\Frontend\EventController::class, 'index'])->name('events');
 Route::get('/event/{slug}', [\App\Http\Controllers\Frontend\EventController::class, 'show'])->name('events.show');
 
 
+Route::get('/culturals', [\App\Http\Controllers\Frontend\CulturalController::class, 'index'])->name('culturals');
+Route::get('/culturals/{slug}', [\App\Http\Controllers\Frontend\CulturalController::class, 'show'])->name('culturals.show');
 
+Route::get('/memorials/{type}', [\App\Http\Controllers\Frontend\MemorialController::class, 'index'])->name('memorials');
+Route::get('/memorials/{type}/{slug}', [\App\Http\Controllers\Frontend\MemorialController::class, 'show'])->name('memorials.show');
+
+//gallery
+Route::get('/gallery', [App\Http\Controllers\Frontend\GalleryController::class, 'index'])->name('gallery');
 
 
 

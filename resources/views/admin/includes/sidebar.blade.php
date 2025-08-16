@@ -46,6 +46,21 @@
                         <span key="t-ecommerce">Events</span>
                     </a>
                 </li>
+                {{-- Culturals --}}
+                <li>
+                    <a href="{{ route('admin.culturals.index') }}" class=" waves-effect">
+                        <i class="bx bx-culture"></i>
+                        <span key="t-ecommerce">Culturals</span>
+                    </a>
+                </li>
+                {{-- memorials--}}
+                <li>
+                    <a href="{{ route('admin.memorials.index') }}" class=" waves-effect">
+                        <i class="bx bx-memorial"></i>
+                        <span key="t-ecommerce">Memorials</span>
+                    </a>
+                </li>
+                
 
             </ul>
         </div>

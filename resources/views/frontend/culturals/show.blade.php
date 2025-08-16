@@ -11,14 +11,14 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="header-page-locator">
                         <ul>
-                            <li><a href="{{ url('/') }}">Home <i class="fa fa-compress" aria-hidden="true"></i> </a> Events</li>
+                            <li><a href="{{ url('/') }}">Home <i class="fa fa-compress" aria-hidden="true"></i> </a> Culturals</li>
                         </ul>
                     </div>
                     <div class="header-page-title">
-                        <h1>EVENT</h1>
+                        <h1>CULTURAL</h1>
                     </div>
                     <div class="header-page-subtitle">
-                        <p>{{$event->banner_desc}}</p>
+                        <p>{{ $cultural->banner_desc }}</p>
                     </div>
                 </div>
             </div>
@@ -27,16 +27,16 @@
 </div>
 <!-- Inner Page Header section end here -->
 
-<!-- Event Single Start Here -->
+<!-- Cultural Single Start Here -->
 <div class="single-blog-page-area">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="single-image">
-                    <img src="{{ $event->main_img ? asset($event->main_img) : asset('assets/frontend/images/single/1.jpg') }}" alt="Event photo">
+                    <img src="{{ $cultural->main_img ? asset($cultural->main_img) : asset('assets/frontend/images/single/1.jpg') }}" alt="Cultural photo">
                 </div>
-                <h3><a href="#">{{ $event->main_head }}</a></h3>
-                <p>{!! $event->main_desc !!}</p>
+                <h3><a href="#">{{ $cultural->main_head }}</a></h3>
+                <p>{!! $cultural->main_desc !!}</p>
                 <div class="share-section">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 life-style">
@@ -45,7 +45,7 @@
                             </span>
                             <span class="date">
                                 <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                {{ $event->created_at ? $event->created_at->format('M d, Y') : '' }}
+                                {{ $cultural->created_at ? $cultural->created_at->format('M d, Y') : '' }}
                             </span>
                         </div>
                     </div>
@@ -53,15 +53,15 @@
                 <div class="like-section">
                     <h3 class="title-bg">YOU MIGHT ALSO LIKE</h3>
                     <div class="row">
-                        @foreach($relatedEvents as $item)
+                        @foreach($relatedCulturals as $item)
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="popular-post-img">
-                                    <a href="{{ route('events.show', $item->slug) }}">
-                                        <img src="{{ $item->main_img ? asset($item->main_img) : asset('assets/frontend/images/single/2.jpg') }}" alt="Event photo">
+                                    <a href="{{ route('culturals.show', $item->slug) }}">
+                                        <img src="{{ $item->main_img ? asset($item->main_img) : asset('assets/frontend/images/single/2.jpg') }}" alt="Cultural photo">
                                     </a>
                                 </div>
                                 <h3>
-                                    <a href="{{ route('events.show', $item->slug) }}">{{ $item->main_head }}</a>
+                                    <a href="{{ route('culturals.show', $item->slug) }}">{{ $item->main_head }}</a>
                                 </h3>
                                 <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ $item->created_at ? $item->created_at->format('M d, Y') : '' }}</span>
                             </div>
@@ -81,19 +81,19 @@
                         </ul>
                     </div>
                     <div class="recent-post-area hot-news">
-                        <h3 class="title-bg">Recent Events</h3>
+                        <h3 class="title-bg">Recent Culturals</h3>
                         <ul class="news-post">
-                            @foreach($recentEvents as $item)
+                            @foreach($recentCulturals as $item)
                             <li>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
                                         <div class="item-post">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 paddimg-right-none">
-                                                    <a href="{{ route('events.show', $item->slug) }}"><img src="{{ $item->main_img ? asset($item->main_img) : asset('assets/frontend/images/popular/1.jpg') }}" alt="" title="Event image" /></a>
+                                                    <a href="{{ route('culturals.show', $item->slug) }}"><img src="{{ $item->main_img ? asset($item->main_img) : asset('assets/frontend/images/popular/1.jpg') }}" alt="" title="Cultural image" /></a>
                                                 </div>
                                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                                    <h4><a href="{{ route('events.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
+                                                    <h4><a href="{{ route('culturals.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
                                                     <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ $item->created_at ? $item->created_at->format('M d, Y') : '' }}</span>
                                                 </div>
                                             </div>
@@ -105,15 +105,15 @@
                         </ul>
                     </div>
                     <div class="trending-post-area">
-                        <h3 class="title-bg">Trending Events</h3>
+                        <h3 class="title-bg">Trending Culturals</h3>
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <ul>
-                                    @foreach($trendingEvents as $item)
+                                    @foreach($trendingCulturals as $item)
                                     <li>
-                                        <a href="{{ route('events.show', $item->slug) }}" class="hvr-bounce-to-right team-btn">The team</a><br/>
+                                        <a href="{{ route('culturals.show', $item->slug) }}" class="hvr-bounce-to-right team-btn">The team</a><br/>
                                         <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ $item->created_at ? $item->created_at->format('M d, Y') : '' }}</span>
-                                        <h4><a href="{{ route('events.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
+                                        <h4><a href="{{ route('culturals.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
                                         <p>{{ \Illuminate\Support\Str::limit(strip_tags($item->main_desc), 80) }}</p>
                                     </li>
                                     @endforeach
@@ -129,5 +129,5 @@
         </div>
     </div>
 </div>
-<!-- Event Details Page end here -->
+<!-- Cultural Details Page end here -->
 @endsection

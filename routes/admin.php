@@ -32,4 +32,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('news', App\Http\Controllers\Admin\NewsController::class);
     Route::resource('articles', \App\Http\Controllers\Admin\ArticleController::class);
     Route::resource('events', \App\Http\Controllers\Admin\EventController::class);
+    Route::resource('culturals', \App\Http\Controllers\Admin\CulturalController::class);
+    Route::resource('memorials', \App\Http\Controllers\Admin\MemorialController::class);
+    
 }); 
