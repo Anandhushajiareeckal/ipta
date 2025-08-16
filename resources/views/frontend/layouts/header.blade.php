@@ -73,12 +73,16 @@
                                 <li><a href="{{ route('news') }}" class="has">News </i></a></li>
                                 <li><a href="{{ route('articles') }}" class="has">Articles </i></a></li>
                                 <li><a href="{{ route('events') }}" class="has">Events </i></a></li>
-                                 <li><a href="#" class="has dropdown-toggle">Memorials <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ route('memorials',['anusmarana kurippu'])}}">anusmarana kurippu</a></li>
-                                            <li><a href="{{ route('memorials',['jeeva charithram'])}}">jeeva charithram</a></li>
-                                        </ul>
-                                    </li>
+                                <li><a href="#" class="has dropdown-toggle">Memorials <i
+                                            class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ route('memorials', ['anusmarana kurippu']) }}">anusmarana
+                                                kurippu</a></li>
+                                        <li><a href="{{ route('memorials', ['jeeva charithram']) }}">jeeva charithram</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ route('gallery') }}"> Gallery </i></a></li>
                             </ul>
                         </nav>
                     </div>

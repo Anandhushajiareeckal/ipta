@@ -41,7 +41,7 @@ Route::get('/memorials/{type}/{slug}', [\App\Http\Controllers\Frontend\MemorialC
 
 //gallery
 Route::get('/gallery', [App\Http\Controllers\Frontend\GalleryController::class, 'index'])->name('gallery');
-
+Route::get('/gallery/{slug}', [App\Http\Controllers\Frontend\GalleryController::class, 'show'])->name('gallery.show');
 
 
 
