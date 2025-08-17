@@ -43,7 +43,15 @@ Route::get('/memorials/{type}/{slug}', [\App\Http\Controllers\Frontend\MemorialC
 Route::get('/gallery', [App\Http\Controllers\Frontend\GalleryController::class, 'index'])->name('gallery');
 Route::get('/gallery/{slug}', [App\Http\Controllers\Frontend\GalleryController::class, 'show'])->name('gallery.show');
 
+//videos
+Route::get('/videos', [App\Http\Controllers\Frontend\VideoController::class, 'index'])->name('videos');
 
+Route::get('/literature/{type}', [\App\Http\Controllers\Frontend\LiteratureController::class, 'index'])->name('literature');
+Route::get('/literature/{type}/{slug}', [\App\Http\Controllers\Frontend\LiteratureController::class, 'show'])->name('literature.show');
+
+//little
+Route::get('/little', [\App\Http\Controllers\Frontend\LittleController::class, 'index'])->name('little');
+Route::get('/little/{slug}', [\App\Http\Controllers\Frontend\LittleController::class, 'show'])->name('little.show');
 
 
 

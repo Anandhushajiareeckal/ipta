@@ -35,4 +35,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('culturals', \App\Http\Controllers\Admin\CulturalController::class);
     Route::resource('memorials', \App\Http\Controllers\Admin\MemorialController::class);
     Route::resource('gallery', \App\Http\Controllers\Admin\GalleryController::class);
+    Route::resource('videos', \App\Http\Controllers\Admin\VideoController::class);
+    Route::resource('literature', \App\Http\Controllers\Admin\LiteratureController::class);
+    Route::resource('little', \App\Http\Controllers\Admin\LittleController::class);
 }); 

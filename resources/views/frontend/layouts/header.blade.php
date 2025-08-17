@@ -83,6 +83,15 @@
                                     </ul>
                                 </li>
                                 <li><a href="{{ route('gallery') }}"> Gallery </i></a></li>
+                                <li><a href="{{ route('videos') }}"> Videos </i></a></li>
+                                <li><a href="#" class="has dropdown-toggle">Litrature<i
+                                            class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ route('literature', ['poem']) }}">Poem</a></li>
+                                        <li><a href="{{ route('literature', ['story']) }}">Story</a></li>
+                                        <li><a href="{{ route('literature', ['book review']) }}">Book review</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>

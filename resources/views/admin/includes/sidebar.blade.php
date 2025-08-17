@@ -60,6 +60,13 @@
                         <span key="t-ecommerce">Memorials</span>
                     </a>
                 </li>
+                {{-- Literature --}}
+                <li>
+                    <a href="{{ route('admin.literature.index') }}" class="waves-effect">
+                        <i class="fa fa-book"></i>
+                        <span key="t-ecommerce">Literature</span>
+                    </a>
+                </li>
                 
 
             </ul>
