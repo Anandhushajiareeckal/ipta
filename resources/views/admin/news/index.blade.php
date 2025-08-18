@@ -26,7 +26,8 @@
                             <tr>
                                 <th>{{ __('Order') }}</th>
                                 <th>{{ __('Name') }}</th>
-                                <th>{{ __('Image') }}</th>     
+                                <th>{{ __('Image') }}</th>
+                                <th>{{ __('Category') }}</th>
                                 <th>{{ __('Actions') }}</th>
                             </tr>
                         </thead>
@@ -40,6 +41,7 @@
                                             <img src="{{ asset($item->main_img) }}" alt="Image" width="60">
                                         @endif
                                     </td>
+                                    <td>{{ $item->category }}</td>
                                     <td>
                                         <a href="{{ route('admin.news.edit', $item->id) }}" class="btn btn-sm btn-info">{{ __('Edit') }}</a>
                                         <form action="{{ route('admin.news.destroy', $item->id) }}" method="POST" class="d-inline">

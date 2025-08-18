@@ -1,45 +1,5 @@
 <header>
-    <div class="header-top-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                    <div class="header-top-left">
 
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="social-media-area">
-                        <nav>
-                            <ul>
-                                <li><a href="#" class="active"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="header-middle-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="logo-area">
-                        <a href="index.html"><img src="{{ asset('assets/frontend/images/logo.png') }}"
-                                alt="logo"></a>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div class="right-banner">
-                        <img src="{{ asset('assets/frontend/images/add/1.png') }}" alt="add image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="header-bottom-area" id="sticky">
         <div class="container">
             <div class="row">
@@ -62,9 +22,16 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="main-menu navbar-collapse collapse">
                         <nav>
                             <ul>
+                                <li>
+                                    <div class="logo-area">
+                        <a href="index.html"><img src="{{ asset('assets/frontend/images/logo.png') }}"
+                                alt="logo"></a>
+                    </div>
+                                </li>
                                 <li>
                                     <a href="/" class="has dropdown-toggle">Home </a>
                                 </li>

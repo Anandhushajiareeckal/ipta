@@ -31,6 +31,7 @@ class NewsController extends Controller
             'main_img'     => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'main_desc'    => 'nullable|string',
             'banner_desc'  => 'nullable|string',
+            'category'     => 'required|in:Breaking News,Latest News,Trending News,Hot',
         ]);
 
         // Handle image upload if present
@@ -43,7 +44,7 @@ class NewsController extends Controller
 
         News::create($validated);
 
-        return redirect()->back()->with('success', 'News article created successfully');
+        return redirect()->route('admin.news.index')->with('success', 'News article created successfully');
     }
 
     public function edit($id)
@@ -61,21 +62,19 @@ class NewsController extends Controller
             'main_img'     => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'main_desc'    => 'nullable|string',
             'banner_desc'  => 'nullable|string',
+            'category'     => 'required|in:Breaking News,Latest News,Trending News,Hot',
         ]);
 
-        // Handle image upload if present
         if ($request->hasFile('main_img')) {
             $image = $request->file('main_img');
             $imageName = time() . '_' . $image->getClientOriginalName();
             $image->move(public_path('uploads/news'), $imageName);
             $validated['main_img'] = 'uploads/news/' . $imageName;
-        } else {
-            unset($validated['main_img']);
         }
 
         $news->update($validated);
 
-        return redirect()->route('admin.news.index')->with('success', 'News updated successfully');
+        return redirect()->route('admin.news.index')->with('success', 'News article updated successfully');
     }
 
     public function destroy($id)

@@ -1279,7 +1279,7 @@
                     </div>
                     <!--End Two Slider -->
                     <!--Around Area Start Here -->
-                    <div class="view-area separator-large3">
+                    {{-- <div class="view-area separator-large3">
                         <div class="row">
                             <div class="col-sm-8">
                                 <h3 class="title-bg">Around the world</h3>
@@ -1431,68 +1431,13 @@
                                 </div>
                             </div>
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 paddimg-left-none">
-                    <h3 class="title-bg featured-title">Featured News</h3>
+                    <h3 class="title-bg featured-title">Categories</h3>
                     <div class="sidebar">
-                        <ul>
-                            <li>
-                                <a href="#" class="category-btn hvr-bounce-to-right">Business</a>
-                                <div class="post-image"><a href="blog-single.html"><img
-                                            src="{{ asset('assets/frontend/images/sidebar/1.jpg') }}"
-                                            alt="News image" /></a></div>
-                                <div class="content">
-                                    <h4><a href="blog-single.html">The exhibition Bankasy doesn’t want you to see</a></h4>
-                                    <span class="date">
-                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28, 2017
-                                    </span>
-                                    <span class="comment">
-                                        <a href="#">
-                                            <i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                        </a>
-                                    </span>
-
-                                </div>
-                            </li>
-                            <li>
-                                <a href="category-health.html" class="category-btn hvr-bounce-to-right">Health</a>
-                                <div class="post-image"><a href="blog-single.html"><img
-                                            src="{{ asset('assets/frontend/images/sidebar/2.jpg') }}"
-                                            alt="News image" /></a></div>
-                                <div class="content">
-                                    <h4><a href="#">The exhibition Bankasy doesn’t want you to see</a></h4>
-                                    <span class="date">
-                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28, 2017
-                                    </span>
-                                    <span class="comment">
-                                        <a href="#">
-                                            <i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                        </a>
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#" class="category-btn hvr-bounce-to-right">Fashion</a>
-                                <div class="post-image"><a href="blog-single.html"><img
-                                            src="{{ asset('assets/frontend/images/sidebar/3.jpg') }}"
-                                            alt="News image" /></a></div>
-                                <div class="content">
-                                    <h4><a href="#">The exhibition Bankasy doesn’t want you to see</a></h4>
-                                    <span class="date">
-                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28, 2017
-                                    </span>
-                                    <span class="comment">
-                                        <a href="#">
-                                            <i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                        </a>
-                                    </span>
-
-                                </div>
-                            </li>
-                        </ul>
                         <div class="categories-home separator-large3">
-                            <h3 class="title-bg">Categories</h3>
+                            {{-- <h3 class="title-bg">Categories</h3> --}}
                             <ul>
                                 <li><a href="category.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>
                                         Business <span>45</span></a></li>

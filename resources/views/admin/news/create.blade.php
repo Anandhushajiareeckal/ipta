@@ -61,6 +61,19 @@
                         </div>
                     </div>
 
+                    <div class="mb-4 row">
+                        <label for="category" class="col-sm-3 col-form-label">{{ __('Category') }}</label>
+                        <div class="col-sm-9">
+                            <select id="category" name="category" class="form-control">
+                                <option value="Breaking News">Breaking News</option>
+                                <option value="Latest News" selected>Latest News</option>
+                                <option value="Trending News">Trending News</option>
+                                <option value="Hot">Hot</option>
+                            </select>
+                            @error('category') <span class="text-danger">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+
                     <div class="row justify-content-end">
                         <div class="col-sm-9">
                             <button type="submit" class="btn btn-primary w-md">{{ __('Submit') }}</button>

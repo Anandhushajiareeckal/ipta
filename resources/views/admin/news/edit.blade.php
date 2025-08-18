@@ -66,6 +66,19 @@
                         </div>
                     </div>
 
+                    <div class="mb-4 row">
+                        <label for="category" class="col-sm-3 col-form-label">{{ __('Category') }}</label>
+                        <div class="col-sm-9">
+                            <select id="category" name="category" class="form-control">
+                                <option value="Breaking News" {{ old('category', $news->category) == 'Breaking News' ? 'selected' : '' }}>Breaking News</option>
+                                <option value="Latest News" {{ old('category', $news->category) == 'Latest News' ? 'selected' : '' }}>Latest News</option>
+                                <option value="Trending News" {{ old('category', $news->category) == 'Trending News' ? 'selected' : '' }}>Trending News</option>
+                                <option value="Hot" {{ old('category', $news->category) == 'Hot' ? 'selected' : '' }}>Hot</option>
+                            </select>
+                            @error('category') <span class="text-danger">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+
                     <div class="row justify-content-end">
                         <div class="col-sm-9">
                             <button type="submit" class="btn btn-primary w-md">{{ __('Update') }}</button>
