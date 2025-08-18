@@ -8,24 +8,24 @@
         $fav =  @$general->favicon; --}}
     {{-- @endphp --}}
         <meta charset="utf-8" />
-        <title>Login {{setting('site_name')}} Dashboard</title>
+        {{-- <title>Login {{setting('site_name')}} Dashboard</title> --}}
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="" name="description" />
         <meta content="" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset(setting('favicon', 'default-favicon.ico')) }}">
+        {{-- <link rel="shortcut icon" href="{{ asset(setting('favicon', 'default-favicon.ico')) }}"> --}}
 
         <!-- owl.carousel css -->
-        <link rel="stylesheet" href="{{asset('assets/libs/owl.carousel/assets/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/backend/assets/libs/owl.carousel/assets/backend/assets/owl.carousel.min.css')}}">
 
-        <link rel="stylesheet" href="{{asset('assets/libs/owl.carousel/assets/owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/backend/assets/libs/owl.carousel/assets/backend/assets/owl.theme.default.min.css')}}">
 
         <!-- Bootstrap Css -->
-        <link href="{{asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="{{asset('assets/backend/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('assets/backend/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{{asset('assets/backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
         @yield('css_after')
     </head>
 
@@ -37,20 +37,20 @@
         </div>
 
         <!-- JAVASCRIPT -->
-        <script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
-        <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{asset('assets/libs/metismenu/metisMenu.min.js')}}"></script>
-        <script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
-        <script src="{{asset('assets/libs/node-waves/waves.min.js')}}"></script>
+        <script src="{{asset('assets/backend/assets/libs/jquery/jquery.min.js')}}"></script>
+        <script src="{{asset('assets/backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('assets/backend/assets/libs/metismenu/metisMenu.min.js')}}"></script>
+        <script src="{{asset('assets/backend/assets/libs/simplebar/simplebar.min.js')}}"></script>
+        <script src="{{asset('assets/backend/assets/libs/node-waves/waves.min.js')}}"></script>
 
         <!-- owl.carousel js -->
-        <script src="{{asset('assets/libs/owl.carousel/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('assets/backend/assets/libs/owl.carousel/owl.carousel.min.js')}}"></script>
 
         <!-- auth-2-carousel init -->
-        <script src="{{asset('assets/js/pages/auth-2-carousel.init.js')}}"></script>
+        <script src="{{asset('assets/backend/assets/js/pages/auth-2-carousel.init.js')}}"></script>
         
         <!-- App js -->
-        <script src="{{asset('assets/js/app.js')}}"></script>
+        <script src="{{asset('assets/backend/assets/js/app.js')}}"></script>
         @yield('js_after')
     </body>
 </html>
