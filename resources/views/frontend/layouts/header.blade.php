@@ -37,6 +37,7 @@
                                 </li>
 
                                 <li><a href="{{ route('about') }}" class="has">About </i></a></li>
+                                <li><a href="{{ route('blog') }}" class="has">Blog </i></a></li>
                                 <li><a href="{{ route('news') }}" class="has">News </i></a></li>
                                 <li><a href="{{ route('articles') }}" class="has">Articles </i></a></li>
                                 <li><a href="{{ route('events') }}" class="has">Events </i></a></li>
@@ -49,8 +50,16 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('gallery') }}"> Gallery </i></a></li>
-                                <li><a href="{{ route('videos') }}"> Videos </i></a></li>
+                                <li><a href="#" class="has dropdown-toggle">Gallery <i
+                                            class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ route('gallery') }}">Images</a></li>
+                                        <li><a href="{{ route('videos') }}">Videos</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                {{-- <li><a href="{{ route('gallery') }}"> Gallery </i></a></li>
+                                <li><a href="{{ route('videos') }}"> Videos </i></a></li> --}}
                                 <li><a href="#" class="has dropdown-toggle">Litrature<i
                                             class="fa fa-chevron-down" aria-hidden="true"></i></a>
                                     <ul class="sub-menu">

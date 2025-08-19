@@ -33,7 +33,6 @@ class NewsController extends Controller
             'banner_desc'  => 'nullable|string',
             'category'     => 'required|in:Breaking News,Latest News,Trending News,Hot',
         ]);
-
         // Handle image upload if present
         if ($request->hasFile('main_img')) {
             $image = $request->file('main_img');

@@ -38,4 +38,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('videos', \App\Http\Controllers\Admin\VideoController::class);
     Route::resource('literature', \App\Http\Controllers\Admin\LiteratureController::class);
     Route::resource('little', \App\Http\Controllers\Admin\LittleController::class);
+    Route::resource('blog', \App\Http\Controllers\Admin\BlogController::class);
 }); 

@@ -6,37 +6,33 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class News extends Model
+class Blog extends Model
 {
     use HasFactory;
 
-     protected $fillable = [
+    protected $fillable = [
         'banner_desc',
         'main_img',
         'main_head',
         'main_desc',
         'slug',
-        'category',
     ];
 
-
-    // Automatically generate slug
     protected static function boot()
     {
         parent::boot();
 
-        static::creating(function ($news) {
-            $news->slug = static::generateUniqueSlug($news->main_head);
+        static::creating(function ($blog) {
+            $blog->slug = static::generateUniqueSlug($blog->main_head);
         });
 
-        static::updating(function ($news) {
-            if ($news->isDirty('main_head')) {
-                $news->slug = static::generateUniqueSlug($news->main_head, $news->id);
+        static::updating(function ($blog) {
+            if ($blog->isDirty('main_head')) {
+                $blog->slug = static::generateUniqueSlug($blog->main_head, $blog->id);
             }
         });
     }
 
-    // Slug generator with uniqueness check
     protected static function generateUniqueSlug($title, $excludeId = null)
     {
         $slug = Str::slug($title);

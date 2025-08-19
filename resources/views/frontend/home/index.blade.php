@@ -14,41 +14,15 @@
                                     class="fa fa-angle-double-right" aria-hidden="true"></i></div>
                             <div class="tickers col-md-10">
                                 <div id="top-news-slider" class="owl-carousel ">
-                                    <div class="item">
-                                        <a href="blog-single.html"> <img
-                                                src="{{ asset('assets/frontend/images/breaking/1.jpg') }}" alt="news image">
-                                            <span>Migrants Told: Stay in France </span></a>
-                                    </div>
-                                    <div class="item">
-                                        <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/breaking/2.jpg') }}" alt="news image">
-                                            <span>Duo Scripta An The Prieirmod</span></a>
-                                    </div>
-                                    <div class="item">
-                                        <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/breaking/3.jpg') }}" alt="news image">
-                                            <span>Two Loser Idaho Pot Smugglers </span></a>
-                                    </div>
-                                    <div class="item">
-                                        <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/breaking/4.jpg') }}" alt="news image">
-                                            <span>Car racer gives herself a mid-Event</span></a>
-                                    </div>
-                                    <div class="item">
-                                        <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/breaking/5.jpg') }}" alt="news image">
-                                            <span>Aaron Rodgers Criticizes </span></a>
-                                    </div>
-                                    <div class="item">
-                                        <a href="blog-single.html"> <img
-                                                src="{{ asset('assets/frontend/images/breaking/1.jpg') }}" alt="news image">
-                                            <span>Detroit Natives Wary & Recovery</span></a>
-                                    </div>
-                                    <div class="item">
-                                        <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/breaking/4.jpg') }}" alt="news image">
-                                            <span>Clinton campaign jilted as FBI</span></a>
-                                    </div>
+                                    @foreach ($breakingNews as $news)
+                                        <div class="item">
+                                            <a href="{{ route('news.show', $news->slug) }}">
+                                                <img src="{{ $news->main_img ? asset($news->main_img) : asset('assets/frontend/images/breaking/1.jpg') }}"
+                                                    alt="news image">
+                                                <span>{{ \Illuminate\Support\Str::limit($news->main_head, 30) }}</span>
+                                            </a>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -60,62 +34,41 @@
                 <div class="slider-area">
                     <div class="bend niceties preview-2">
                         <div id="ensign-nivoslider" class="slides">
-                            <img src="{{ asset('assets/frontend/images/slider/slide_1.jpg') }}" alt=""
-                                title="#slider-direction-1" />
-                            <img src="{{ asset('assets/frontend/images/slider/slide_3.jpg') }}" alt=""
-                                title="#slider-direction-2" />
+                            @foreach ($latestBlogs as $blog)
+                                <img src="{{ $blog->main_img }}" alt=""
+                                    title="#slider-direction-{{ $blog->id }}" />
+                            @endforeach
                         </div>
                         <!-- direction 2 -->
-                        <div id="slider-direction-1" class="slider-direction">
-                            <div class="slider-content t-cn s-tb slider-1">
-                                <div class="title-container s-tb-c">
-                                    <div class="slider-botton">
-                                        <ul>
-                                            <li>
-                                                <a class="cat-link" href="category.html">Business</a>
-                                                <span class="date">
-                                                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>November 28,
-                                                    2017
-                                                </span>
-                                                <span class="comment">
-                                                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                                    </a>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h1 class="title1"><a href="blog.html"><span>Record</span> proportion of women<br />on
-                                            degrees</a></h1>
-                                    <div class="title2">The exhibition Banksy doesn’t want to see whle travelling hear.
+                        @foreach ($latestBlogs as $blog)
+                            <div id="slider-direction-{{ $blog->id }}" class="slider-direction">
+                                <div class="slider-content t-cn s-tb slider-{{ $blog->id }}">
+                                    <div class="title-container s-tb-c">
+                                        <div class="slider-botton">
+                                            <ul>
+                                                <li>
+                                                    {{-- <a class="cat-link" href="category.html">Business</a> --}}
+                                                    <span class="date">
+                                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                                        {{ $blog->created_at ? $blog->created_at->format('M d, Y') : '' }}
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h1 class="title1">
+                                            <a href="{{ route('blog.show', $blog->slug) }}">
+                                                <span>{{ Str::before($blog->main_head, ' ') }}</span><br>
+                                                {{ Str::words(Str::after($blog->main_head, ' '), 6, '...') }}
+                                            </a>
+                                        </h1>
+
+                                        <div class="title2">
+                                            {{ Str::words(strip_tags($blog->main_desc), 10, '...') }} </div>
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- direction 2 -->
-                        <div id="slider-direction-2" class="slider-direction">
-                            <div class="slider-content t-cn s-tb slider-2">
-                                <div class="title-container s-tb-c">
-                                    <div class="slider-botton">
-                                        <ul>
-                                            <li>
-                                                <a class="cat-link" href="category-world.html">World</a>
-                                                <span class="date">
-                                                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>November 28,
-                                                    2017
-                                                </span>
-                                                <span class="comment">
-                                                    <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                                    </a>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h1 class="title1"><a href="blog.html"><span>John</span> to retire as director</a></h1>
-                                    <div class="title2">The exhibition Banksy doesn’t want to see whle travelling hear.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -123,36 +76,22 @@
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 paddimg-left-none">
                 <div class="slider-right">
                     <ul>
-                        <li>
-                            <div class="right-content">
-                                <span class="category"><a class="cat-link" href="blog.html">Business</a></span>
-                                <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"> </i> June 28,
-                                    2017</span>
-                                <h3><a href="blog-single.html">Trudeau forced to refugees.</a></h3>
-                            </div>
-                            <div class="right-image"><a href="blog-single.html"><img src="images/sidebar-images/1.jpg"
-                                        alt="sidebar image"></a></div>
-                        </li>
-                        <li>
-                            <div class="right-content">
-                                <span class="category"><a class="cat-link" href="blog.html">Health</a></span>
-                                <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"> </i>June 28,
-                                    2017 </span>
-                                <h3><a href="blog-single.html">The exhibition Bankasy</a></h3>
-                            </div>
-                            <div class="right-image"><a href="blog-single.html"><img src="images/sidebar-images/2.jpg"
-                                        alt="sidebar image"></a></div>
-                        </li>
-                        <li>
-                            <div class="right-content">
-                                <span class="category"><a class="cat-link" href="blog.html">Science</a></span>
-                                <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"> </i> June 28,
-                                    2017 </span>
-                                <h3><a href="blog-single.html">Hurricane Harvey: evacuations.</a></h3>
-                            </div>
-                            <div class="right-image"><a href="blog-single.html"><img src="images/sidebar-images/3.jpg"
-                                        alt="sidebar image"></a></div>
-                        </li>
+                        @foreach ($latestArticles as $latestArticle)
+                            <li>
+                                <div class="right-content">
+                                    <span class="category"><a class="cat-link"
+                                            href="{{ route('articles', $latestArticle->slug) }}">Articles</a></span>
+                                    <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true">
+                                        </i>{{ $latestArticle->created_at ? $latestArticle->created_at->format('M d, Y') : '' }}</span>
+                                    <h3><a
+                                            href="blog-single.html">{{ Str::words(strip_tags($latestArticle->main_head), 10, '...') }}</a>
+                                    </h3>
+                                </div>
+                                <div class="right-image"><a href="blog-single.html"><img
+                                            src="{{ $latestArticle->main_img ? asset($latestArticle->main_img) : asset('assets/frontend/images/popular/1.jpg') }}"
+                                            alt="Article image"></a></div>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -167,383 +106,42 @@
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 tab-home">
                     <ul class="nav nav-tabs">
                         <li class="title-bg">Latest News</li>
-                        <li class="active"><a data-toggle="tab" href="#tab1">Highest Rated</a></li>
+                        {{-- <li class="active"><a data-toggle="tab" href="#tab1">Highest Rated</a></li>
                         <li><a data-toggle="tab" href="#tab2">Week</a></li>
                         <li><a data-toggle="tab" href="#tab3">Hot Articals</a></li>
-                        <li><a data-toggle="tab" href="#tab4">Previous</a></li>
+                        <li><a data-toggle="tab" href="#tab4">Previous</a></li> --}}
                     </ul>
                     <div class="tab-content">
                         <div id="tab1" class="tab-pane fade in active">
                             <div class="tab-top-content">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 paddimg-right-none">
-                                        <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/tab/1.jpg') }}"
+                                        <a href="blog-single.html"><img src="{{ $firstLatestNews->main_img }}"
                                                 alt="sidebar image"></a>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 last-col">
-                                        <span class="date"><a href="#"><i class="fa fa-user-o"
-                                                    aria-hidden="true"></i> james Bond </a></span> <span
-                                            class="comment"><a href="#"><i class="fa fa-comment-o"
-                                                    aria-hidden="true"></i> 50</a></span>
-                                        <h3><a href="#">Migrants Told: Stay in France or go back to your country</a>
+                                        <h3><a href="#">{{ $firstLatestNews->main_head }}</a>
                                         </h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl risus,
-                                            tristique diam id, blandit condimentum</p>
-                                        <a href="blog-single.html" class="read-more hvr-bounce-to-right">Read More</a>
+                                        <p>{!! Str::limit(strip_tags($firstLatestNews->main_desc), 100, '...') !!}</p>
+                                        <a href="{{ route('news.show', $firstLatestNews->slug) }}"
+                                            class="read-more hvr-bounce-to-right">Read More</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-bottom-content">
                                 <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
+                                    @foreach ($otherLatestNews as $news )
+                                      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
                                         <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img src="images/tab/2.jpg" alt="News image"></a>
+                                            <a href="blog-single.html"><img src="{{$news->main_img}}" alt="News image"></a>
                                         </div>
                                         <div class="col-sm-12 col-xs-9 img-content">
                                             <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true">
-                                                </i>June 28, 2017</span>
-                                            <h4><a href="blog-single.html">The Soccer Field Close.</a></h4>
+                                                </i>{{ $news->created_at ? $news->created_at->format('M d, Y') : '' }}</span>
+                                            <h4><a href="blog-single.html">{!! Str::limit(strip_tags($news->main_desc),20, '...') !!}</a></h4>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/3.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true">
-                                                </i>June 28, 2017</span>
-                                            <h4><a href="blog-single.html">The Soccer Field Close.</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/4.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true">
-                                                </i>June 28, 2017</span>
-                                            <h4><a href="blog-single.html">The Soccer Field Close.</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/5.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true">
-                                                </i>June 28, 2017</span>
-                                            <h4><a href="blog-single.html">The Soccer Field Close.</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab2" class="tab-pane fade">
-                            <div class="tab-top-content">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 paddimg-right-none">
-                                        <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/tab/7.jpg') }}"
-                                                alt="sidebar image"></a>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 last-col">
-                                        <span class="date"><a href="#"><i class="fa fa-user-o"
-                                                    aria-hidden="true"></i> james Bond </a></span> <span
-                                            class="comment"><a href="#"><i class="fa fa-comment-o"
-                                                    aria-hidden="true"></i> 50</a></span>
-                                        <h3><a href="#">Migrants Told: Stay in France or go back to your country</a>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl risus,
-                                            tristique diam id, blandit condimentum</p>
-                                        <a href="blog-single.html" class="read-more hvr-bounce-to-right">READ MORE</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-bottom-content">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/2.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                            <h4><a href="blog-single.html">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/3.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                            <h4><a href="blog-single.html">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/2.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                            <h4><a href="blog-single.html">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/5.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-
-                                            <h4><a href="blog-single.html">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab3" class="tab-pane fade">
-                            <div class="tab-top-content">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 paddimg-right-none">
-                                        <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/tab/8.jpg') }}"
-                                                alt="sidebar image"></a>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 last-col">
-                                        <span class="date"><a href="#"><i class="fa fa-user-o"
-                                                    aria-hidden="true"></i> james Bond </a></span> <span
-                                            class="comment"><a href="#"><i class="fa fa-comment-o"
-                                                    aria-hidden="true"></i> 50</a></span>
-                                        <h3><a href="#">Migrants Told: Stay in France or go back to your country</a>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl risus,
-                                            tristique diam id, blandit condimentum</p>
-                                        <a href="#" class="read-more hvr-bounce-to-right">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-bottom-content">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/2.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-
-
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/3.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/3.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/2.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab4" class="tab-pane fade">
-                            <div class="tab-top-content">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 paddimg-right-none">
-                                        <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/tab/1.jpg') }}"
-                                                alt="sidebar image"></a>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 last-col">
-                                        <span class="date"><a href="#"><i class="fa fa-user-o"
-                                                    aria-hidden="true"></i> james Bond </a></span> <span
-                                            class="comment"><a href="#"><i class="fa fa-comment-o"
-                                                    aria-hidden="true"></i> 50</a></span>
-                                        <h3><a href="#">Migrants Told: Stay in France or go back to your country</a>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl risus,
-                                            tristique diam id, blandit condimentum</p>
-                                        <a href="#" class="read-more hvr-bounce-to-right">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-bottom-content fadeInUp">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/2.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/3.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/2.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/4.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab5" class="tab-pane fade">
-                            <div class="tab-top-content">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 paddimg-right-none">
-                                        <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/tab/7.jpg') }}"
-                                                alt="sidebar image"></a>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 last-col">
-                                        <span class="date">james Bond </span><a href="#"><i class="fa fa-heart-o"
-                                                aria-hidden="true"></i> 50</a> <span class="comment"><a href="#"><i
-                                                    class="fa fa-comment-o" aria-hidden="true"></i> 50</a></span>
-                                        <h3><a href="#">Migrants Told: Stay in France or go back to your country</a>
-                                        </h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl risus,
-                                            tristique diam id, blandit condimentum</p>
-                                        <a href="#" class="read-more hvr-bounce-to-right">READ MORE</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-bottom-content fadeInUp">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/2.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/3.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/2.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 tab-area">
-                                        <div class="col-sm-12 col-xs-3 img-tab">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/tab/4.jpg') }}"
-                                                    alt="News image"></a>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-9 img-content">
-                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                            <h4><a href="#">SIS puts fierce fight & bombing</a></h4>
-                                        </div>
-                                    </div>
+                                    </div>  
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -556,7 +154,7 @@
                                     <h3 class="title-bg">Trending News</h3>
                                 </div>
                                 <div class="col-sm-4 text-right">
-                                    <a href="#">View More <i class="fa fa-angle-double-right"
+                                    <a href="{{ route('news')}}">View More <i class="fa fa-angle-double-right"
                                             aria-hidden="true"></i></a>
                                 </div>
                             </div>
@@ -564,7 +162,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="list-col">
                                     <a href="blog-single.html"> <img
-                                            src="{{ asset('assets/frontend/images/Trending/1.jpg') }}" alt=""
+                                            src="{{ $firstTrendingNews->main_img }}" alt=""
                                             title="Trending image" /></a>
                                     <div class="dsc">
                                         <span class="date"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
@@ -1282,6 +880,33 @@
                     {{-- <div class="view-area separator-large3">
                         <div class="row">
                             <div class="col-sm-8">
+                                    </div>
+                                    <div class="item">
+                                        <a href="#"><img
+                                                src="{{ asset('assets/frontend/images/news-slider-image/2.jpg') }}"
+                                                alt="" title="#slider-direction-1" /></a>
+                                        <div class="dsc">
+                                            <span class="date">
+                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                                November 28, 2017
+                                            </span>
+                                            <span class="comment">
+                                                <a href="#"> <i class="fa fa-comment-o" aria-hidden="true"></i> 50
+                                                </a>
+                                            </span>
+                                            <h4><a href="blog-single.html">The new-style GCSEs show why politicians must do
+                                                    more explaining.</a></h4>
+                                            <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Two Slider -->
+                    <!--Around Area Start Here -->
+                    {{-- <div class="view-area separator-large3">
+                        <div class="row">
+                            <div class="col-sm-8">
                                 <h3 class="title-bg">Around the world</h3>
                             </div>
                             <div class="col-sm-4 text-right">
@@ -1443,14 +1068,14 @@
                                         Business <span>45</span></a></li>
                                 <li><a href="category-world.html"><i class="fa fa-angle-right" aria-hidden="true"></i>
                                         World <span>70</span></a></li>
-                                <li><a href="category-fashion.html"><i class="fa fa-angle-right"
-                                            aria-hidden="true"></i> Fashion <span>45</span></a></li>
-                                <li><a href="category-politics.html"><i class="fa fa-angle-right"
-                                            aria-hidden="true"></i> Politics <span>55</span></a></li>
-                                <li><a href="category-sports.html"><i class="fa fa-angle-right"
-                                            aria-hidden="true"></i> Sports <span>50</span></a></li>
-                                <li><a href="category-health.html"><i class="fa fa-angle-right"
-                                            aria-hidden="true"></i> Health <span>65</span></a></li>
+                                <li><a href="category-fashion.html"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Fashion <span>45</span></a></li>
+                                <li><a href="category-politics.html"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Politics <span>55</span></a></li>
+                                <li><a href="category-sports.html"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Sports <span>50</span></a></li>
+                                <li><a href="category-health.html"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Health <span>65</span></a></li>
                             </ul>
                         </div>
                     </div>

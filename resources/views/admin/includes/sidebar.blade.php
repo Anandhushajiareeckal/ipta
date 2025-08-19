@@ -23,7 +23,13 @@
                         <span key="t-ecommerce">About</span>
                     </a>
                 </li>
-
+                {{-- blog --}}
+                <li>
+                    <a href="{{ route('admin.blog.index') }}" class=" waves-effect">
+                        <i class="bx bx-news"></i>
+                        <span key="t-ecommerce">Blog</span>
+                    </a>
+                </li>
                 {{-- News --}}
                 <li>
                     <a href="{{ route('admin.news.index') }}" class=" waves-effect">

@@ -53,6 +53,9 @@ Route::get('/literature/{type}/{slug}', [\App\Http\Controllers\Frontend\Literatu
 Route::get('/little', [\App\Http\Controllers\Frontend\LittleController::class, 'index'])->name('little');
 Route::get('/little/{slug}', [\App\Http\Controllers\Frontend\LittleController::class, 'show'])->name('little.show');
 
+//blog
+Route::get('/blog', [\App\Http\Controllers\Frontend\BlogController::class, 'index'])->name('blog');
+Route::get('/blog/{slug}', [\App\Http\Controllers\Frontend\BlogController::class, 'show'])->name('blog.show');
 
 
 
