@@ -11,7 +11,7 @@ class Literature extends Model
         'images' => 'array',
     ];
 
-    protected static function boot()
+    protected static function boot()        
     {
         parent::boot();
         static::creating(function ($literature) {

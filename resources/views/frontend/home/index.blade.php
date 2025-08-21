@@ -166,17 +166,18 @@
                                             title="Trending image" /></a>
                                     <div class="dsc">
                                         <span class="date"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                            November 28, 2017 </span> <span class="comment"><a href="#"><i
+                                            {{ $firstTrendingNews->created_at ? $firstTrendingNews->created_at->format('M d, Y') : '' }}</span> <span class="comment"><a href="#"><i
                                                     class="fa fa-comment-o" aria-hidden="true"></i> 50</a></span>
-                                        <h3><a href="blog-single.html">Two Loser Idaho Pot Smugglers Freak Out, Call 911 on
-                                                Themselves </a></h3>
-                                        <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste
-                                            rhoncus sem the purus eu sapien curabitur.</p>
+                                        <h3><a href="blog-single.html">{{$firstTrendingNews->main_head}}</a></h3>
+                                        <p>{!! Str::limit(strip_tags($firstTrendingNews->main_desc),20, '...') !!}</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <ul class="news-post">
+                                    @foreach ($otherTrendingNews as $news)
+                                        
+                                    @endforeach
                                     <li>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
@@ -185,80 +186,13 @@
                                                         <div
                                                             class="col-lg-4 col-md-4 col-sm-3 col-xs-3 paddimg-right-none">
                                                             <a href="blog-single.html"> <img
-                                                                    src="{{ asset('assets/frontend/images/Trending/2.jpg') }}"
+                                                                    src="{{ $news->main_img }}"
                                                                     alt="" title="Trending image"></a>
                                                         </div>
                                                         <div class="col-lg-8 col-md-8 col-sm-9 col-xs-9">
-                                                            <h4><a href="blog-single.html">Suspendisse Non Metus
-                                                                    Consectetur Nunc </a></h4>
+                                                            <h4><a href="blog-single.html">{!! Str::limit(strip_tags($news->main_head),20, '...') !!}</a></h4>
                                                             <span class="date"><i class="fa fa-calendar-check-o"
-                                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
-                                                <div class="item-post">
-                                                    <div class="row">
-                                                        <div
-                                                            class="col-lg-4 col-md-4 col-sm-3 col-xs-3 paddimg-right-none">
-                                                            <a href="blog-single.html"> <img
-                                                                    src="{{ asset('assets/frontend/images/Trending/3.jpg') }}"
-                                                                    alt="" title="Trending image"></a>
-                                                        </div>
-                                                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-9">
-                                                            <h4><a href="blog-single.html">Duo Scripta An The Prieirmod</a>
-                                                            </h4>
-                                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
-                                                <div class="item-post">
-                                                    <div class="row">
-                                                        <div
-                                                            class="col-lg-4 col-md-4 col-sm-3 col-xs-3 paddimg-right-none">
-                                                            <a href="blog-single.html"> <img
-                                                                    src="{{ asset('assets/frontend/images/Trending/4.jpg') }}"
-                                                                    alt="" title="Trending image"></a>
-                                                        </div>
-                                                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-9">
-                                                            <h4><a href="blog-single.html">Terrorism Concerns Get UK
-                                                                    Tourists </a></h4>
-                                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                                    aria-hidden="true"></i> June 28, 2017</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
-                                                <div class="item-post">
-                                                    <div class="row">
-                                                        <div
-                                                            class="col-lg-4 col-md-4 col-sm-3 col-xs-3 paddimg-right-none">
-                                                            <a href="blog-single.html"> <img
-                                                                    src="{{ asset('assets/frontend/images/Trending/5.jpg') }}"
-                                                                    alt="" title="Trending image"></a>
-                                                        </div>
-                                                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-9">
-                                                            <h4><a href="blog-single.html">Ranking The Royal King Comeback
-                                                                    Win </a></h4>
-                                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                                    aria-hidden="true"></i> June 28, 2017</span>
+                                                                    aria-hidden="true"></i> {{ $news->created_at ? $news->created_at->format('M d, Y') : '' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -287,81 +221,34 @@
                                 <div class="featured">
                                     <div class="blog-img">
                                         <a href="blog-single.html"><img
-                                                src="{{ asset('assets/frontend/images/hot-news/1.jpg') }}" alt=""
+                                                src="{{ $firstHotNews->main_img }}" alt=""
                                                 title="News image" /></a>
                                     </div>
                                     <div class="blog-content">
                                         <a href="category-sports.html" class="cat-link">Sports</a><span class="date"><i
-                                                class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28,
-                                            2017</span>
-                                        <h4><a href="#">Car racer gives herself a mid-Event haicut</a></h4>
+                                                class="fa fa-calendar-check-o" aria-hidden="true"></i>{{ $firstHotNews->created_at ? $firstHotNews->created_at->format('M d, Y') : '' }}</span>
+                                        <h4><a href="#">{{$firstHotNews->main_head}}</a></h4>
                                     </div>
                                 </div>
                                 <ul class="news-post news-feature-mb">
-                                    <li>
+                                    @foreach ($otherHotNews as $news) 
+                                          <li>
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-4">
                                                 <a href="blog-single.html"><img
-                                                        src="{{ asset('assets/frontend/images/hot-news/3.jpg') }}"
+                                                        src="{{ $news->main_img }}" alt=""
                                                         alt="News image" /></a>
                                             </div>
                                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-8 content">
-                                                <h4><a href="#">Clinton Campaign Jilted & Search Emails</a></h4>
-                                                <span class="author"><a href="#"><i class="fa fa-user-o"
-                                                            aria-hidden="true"></i> yeamin</a></span> <span
+                                                <h4><a href="#">{{$news->main_head}}</a></h4>
+                                                 <span
                                                     class="date"><i class="fa fa-calendar-check-o"
-                                                        aria-hidden="true"></i> June 28, 2017</span>
-                                                <span class="comment"><a href="#"><i class="fa fa-comment-o"
-                                                            aria-hidden="true"></i> 50</a></span>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestib vitae
-                                                    libero vel purus tincidunt aliquet at nec erat. Mauris the diam,
-                                                    ultrices quis leo sed lacinia egestas.The wise man there always holds in
-                                                    these matters.</p>
+                                                        aria-hidden="true"></i>{{ $news->created_at ? $news->created_at->format('M d, Y') : '' }}</span>
+                                                <p>{!! Str::limit(strip_tags($news->main_desc),300, '...') !!}</p>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-4">
-                                                <a href="blog-single.html"><img
-                                                        src="{{ asset('assets/frontend/images/hot-news/2.jpg') }}"
-                                                        alt="News image" /></a>
-                                            </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-8 content">
-                                                <h4><a href="#">Aaron Rodgers Criticizes For</a></h4> <span
-                                                    class="date"><i class="fa fa-calendar-check-o"
-                                                        aria-hidden="true"></i> June 28, 2017</span>
-                                                <span class="comment"><a href="#"><i class="fa fa-comment-o"
-                                                            aria-hidden="true"></i> 50</a></span>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestib vitae
-                                                    libero vel purus tincidunt aliquet at nec erat. Mauris the diam,
-                                                    ultrices quis leo sed lacinia egestas.The wise man there always holds in
-                                                    these matters.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-4">
-                                                <a href="blog-single.html"><img
-                                                        src="{{ asset('assets/frontend/images/hot-news/4.jpg') }}"
-                                                        alt="News image" /></a>
-                                            </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-8 content">
-                                                <h4><a href="#">Detroit Natives Wary & Recovery Threatens</a></h4>
-                                                <span class="author"><a href="#"><i class="fa fa-user-o"
-                                                            aria-hidden="true"></i> yeamin</a></span> <span
-                                                    class="date"><i class="fa fa-calendar-check-o"
-                                                        aria-hidden="true"></i> June 28, 2017</span>
-                                                <span class="comment"><a href="#"><i class="fa fa-comment-o"
-                                                            aria-hidden="true"></i> 50</a></span>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestib vitae
-                                                    libero vel purus tincidunt aliquet at nec erat. Mauris the diam,
-                                                    ultrices quis leo sed lacinia egestas.The wise man there always holds in
-                                                    these matters.</p>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -390,9 +277,9 @@
                     <!--Like Box End Here -->
 
                     <!--Add Start Here -->
-                    <div class="add-section">
+                    {{-- <div class="add-section">
                         <img src="images/add/2.jpg" alt="add image">
-                    </div>
+                    </div> --}}
                     <!--Add Box End Here -->
 
                     <!--Newsletter Start Here -->
@@ -400,11 +287,11 @@
                         <form>
                             <fieldset>
                                 <div class="form-group">
-                                    <h4>Subscribe to Newsletter</h4>
+                                    <h4>Have a Question?</h4>
                                     <div class="newsletter">
-                                        <input class="form-control" placeholder="Email address..." type="text">
-                                        <button class="btn-send" type="submit">Subscribe</button>
-                                        <p>Get the latest news stories in your inbox</p>
+                                        {{-- <input class="form-control" placeholder="Email address..." type="text"> --}}
+                                        <button class="btn-send" type="submit">Get in Touch</button><br>
+                                        <p>We’re here to help. Ask us anything!</p>
                                     </div>
                                 </div>
                             </fieldset>
@@ -415,23 +302,18 @@
 
                     <!--popular Post Start Here -->
                     <div class="sidebar popular">
-                        <h3 class="title-bg">Popular Now</h3>
+                        <h3 class="title-bg">Events</h3>
                         <ul>
                             <li>
-                                <a href="category.html" class="category-btn hvr-bounce-to-right">Business</a>
-                                <div class="post-image"><img src="{{ asset('assets/frontend/images/sidebar/1.jpg') }}"
+                                <a href="category.html" class="category-btn hvr-bounce-to-right">Events</a>
+                                <div class="post-image"><img src="{{ $firstEvent->main_img }}"
                                         alt="News image"></div>
                                 <div class="content">
                                     <h4>
-                                        <a href="#">The exhibition Bankasy doesn’t want you to see</a>
+                                        <a href="#">{{$firstEvent->main_head}}</a>
                                     </h4>
                                     <span class="date">
-                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28, 2017
-                                    </span>
-                                    <span class="comment">
-                                        <a href="#">
-                                            <i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                        </a>
+                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ $firstEvent->created_at ? $firstEvent->created_at->format('M d, Y') : '' }}
                                     </span>
                                 </div>
                             </li>
@@ -441,92 +323,33 @@
 
                     <div class="hot-news popular-related">
                         <ul class="news-post">
-                            <li>
+                            @foreach ($otherEvents as $event )
+                                <li>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
                                         <div class="item-post">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-3 paddimg-right-none">
-                                                    <img src="{{ asset('assets/frontend/images/popular/1.jpg') }}"
+                                                    <img src="{{ $event->main_img }}"
                                                         alt="" title="News image">
                                                 </div>
                                                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-9">
-                                                    <h4><a href="#"> US should prepare for <br /> Russian
-                                                            election</a></h4>
+                                                    <h4><a href="#">{{$event->main_head}}</a></h4>
                                                     <span class="date"><i class="fa fa-calendar-check-o"
-                                                            aria-hidden="true"></i> June 28, 2017</span>
+                                                            aria-hidden="true"></i> {{ $event->created_at ? $event->created_at->format('M d, Y') : '' }}</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
-                                        <div class="item-post">
-                                            <div class="row">
-                                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-3 paddimg-right-none">
-                                                    <img src="{{ asset('assets/frontend/images/popular/2.jpg') }}"
-                                                        alt="" title="News image">
-                                                </div>
-                                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-9">
-                                                    <h4><a href="blog-single.html"> Pellentesque Odio Nisi<br /> Euismod In
-                                                            Pharet</a></h4>
-                                                    <span class="date"><i class="fa fa-calendar-check-o"
-                                                            aria-hidden="true"></i> June 28, 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
-                                        <div class="item-post">
-                                            <div class="row">
-                                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-3 paddimg-right-none">
-                                                    <img src="{{ asset('assets/frontend/images/popular/3.jpg') }}"
-                                                        alt="" title="News image">
-                                                </div>
-                                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-9">
-                                                    <h4><a href="blog-single.html"> Erant Aeque Neius No <br />Numes
-                                                            Electram</a></h4>
-                                                    <span class="date"><i class="fa fa-calendar-check-o"
-                                                            aria-hidden="true"></i> June 28, 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
-                                        <div class="item-post">
-                                            <div class="row">
-                                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-3 paddimg-right-none">
-                                                    <img src="{{ asset('assets/frontend/images/popular/4.jpg') }}"
-                                                        alt="" title="News image">
-                                                </div>
-                                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-9">
-                                                    <h4><a href="blog-single.html"> Erant Aeque Neius No <br />Numes
-                                                            Electram</a></h4>
-                                                    <span class="date"><i class="fa fa-calendar-check-o"
-                                                            aria-hidden="true"></i> June 28, 2017</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                     <!--popular Post End Here -->
 
                     <!--Recent comments Start Here -->
-                    <div class="recent-comments separator-large">
+                    {{-- <div class="recent-comments separator-large">
                         <div id="comments-Carousel" class="carousel carousel-comments slide" data-ride="carousel">
                             <!-- Wrapper for slides -->
                             <!-- Left and right controls -->
@@ -566,12 +389,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <!--Recent comments Start Here -->
                     <!--Add Start Here -->
-                    <div class="add-section add-section2">
+                    {{-- <div class="add-section add-section2">
                         <img src="{{ asset('assets/frontend/images/add/3.jpg') }}" alt="add image">
-                    </div>
+                    </div> --}}
                     <!--Add Box End Here -->
                 </div>
             </div>
@@ -583,139 +406,41 @@
             <div class="row">
                 <div class="view-area">
                     <div class="col-sm-12">
-                        <h3 class="title-bg">Fetuered Videos</h3>
+                        <h3 class="title-bg"> Videos</h3>
                     </div>
                 </div>
             </div>
-            <div id="featured-videos-section" class="owl-carousel">
-                <div class="item">
-                    <div class="single-videos">
-                        <div class="images">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/fetuered/1.jpg') }}"
-                                    alt=""></a>
-                            <div class="overley">
-                                <div class="videos-icon">
-                                    <a class="popup-videos" href="http://www.youtube.com/watch?v=Cdajfy4voyY"><img
-                                            src="{{ asset('assets/frontend/images/fetuered/video-icon.png') }}"
-                                            alt=""></a>
+            @foreach ($videos as $video)
+            @php
+                // Extract video id from embed URL
+                preg_match('/embed\/([^\?]+)/', $video->url, $matches);
+                $videoId = $matches[1] ?? null;
+                $watchUrl = "https://www.youtube.com/watch?v=" . $videoId;
+                $embedUrl = "https://www.youtube.com/embed/" . $videoId;
+            @endphp
+                <div id="featured-videos-section" class="owl-carousel">
+                    <div class="item">
+                        <div class="single-videos">
+                            <div class="images">
+                                <a href="#"><img src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                        alt=""></a>
+                                <div class="overley">
+                                    <div class="videos-icon">
+                                        <a class="popup-videos" href="{{ $watchUrl }}"><img
+                                                src="{{ asset('assets/frontend/images/fetuered/video-icon.png') }}"
+                                                alt=""></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="videos-text">
-                            <h3><a href="#">Smart Packs Parking Sensor Tech</a></h3>
-                            <span class="date"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28,
-                                2017 </span>
-                            <span class="comment"><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>
-                                    50 </a></span>
+                            <div class="videos-text">
+                                <h3><a href="#">{{$video->title}}</a></h3>
+                                <span class="date"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i>{{ $video->created_at ? $video->created_at->format('M d, Y') : '' }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="single-videos">
-                        <div class="images">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/fetuered/2.jpg') }}"
-                                    alt=""></a>
-                            <div class="overley">
-                                <div class="videos-icon">
-                                    <a class="popup-videos" href="http://www.youtube.com/watch?v=Cdajfy4voyY"><img
-                                            src="{{ asset('assets/frontend/images/fetuered/video-icon.png') }}"
-                                            alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="videos-text">
-                            <h3><a href="#">Woman Endure Five Year Slvery</a></h3>
-                            <span class="date"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28,
-                                2017 </span><span class="comment"><a href="#"><i class="fa fa-comment-o"
-                                        aria-hidden="true"></i> 50 </a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="single-videos">
-                        <div class="images">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/fetuered/3.jpg') }}"
-                                    alt=""></a>
-                            <div class="overley">
-                                <div class="videos-icon">
-                                    <a class="popup-videos" href="http://www.youtube.com/watch?v=Cdajfy4voyY"><img
-                                            src="{{ asset('assets/frontend/images/fetuered/video-icon.png') }}"
-                                            alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="videos-text">
-                            <h3><a href="#">Health Benefits of Morning Running</a></h3>
-                            <span class="date"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28,
-                                2017 </span><span class="comment"><a href="#"><i class="fa fa-comment-o"
-                                        aria-hidden="true"></i> 50 </a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="single-videos">
-                        <div class="images">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/fetuered/4.jpg') }}"
-                                    alt=""></a>
-                            <div class="overley">
-                                <div class="videos-icon">
-                                    <a class="popup-videos" href="http://www.youtube.com/watch?v=Cdajfy4voyY"><img
-                                            src="{{ asset('assets/frontend/images/fetuered/video-icon.png') }}"
-                                            alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="videos-text">
-                            <h3><a href="#">Smart Packs Parking Sensor Tech</a></h3>
-                            <span class="date"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28,
-                                2017 </span><span class="comment"><a href="#"><i class="fa fa-comment-o"
-                                        aria-hidden="true"></i> 50 </a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="single-videos">
-                        <div class="images">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/fetuered/5.jpg') }}"
-                                    alt=""></a>
-                            <div class="overley">
-                                <div class="videos-icon">
-                                    <a class="popup-videos" href="http://www.youtube.com/watch?v=Cdajfy4voyY"><img
-                                            src="{{ asset('assets/frontend/images/fetuered/video-icon.png') }}"
-                                            alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="videos-text">
-                            <h3><a href="#">Smart Packs Parking Sensor Tech</a></h3>
-                            <span class="date"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28,
-                                2017 </span><span class="comment"><a href="#"><i class="fa fa-comment-o"
-                                        aria-hidden="true"></i> 50 </a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="single-videos">
-                        <div class="images">
-                            <a href="#"><img src="{{ asset('assets/frontend/images/fetuered/2.jpg') }}"
-                                    alt=""></a>
-                            <div class="overley">
-                                <div class="videos-icon">
-                                    <a class="popup-videos" href="http://www.youtube.com/watch?v=Cdajfy4voyY"><img
-                                            src="{{ asset('assets/frontend/images/fetuered/video-icon.png') }}"
-                                            alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="videos-text">
-                            <h3><a href="#">Smart Packs Parking Sensor Tech</a></h3>
-                            <span class="date"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28,
-                                2017 </span><span class="comment"><a href="#"><i class="fa fa-comment-o"
-                                        aria-hidden="true"></i> 50 </a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
 
@@ -735,7 +460,7 @@
                                     <div class="row">
                                         <div class="col-sm-9 col-xs-9">
                                             <div class="view-area">
-                                                <h3 class="title-bg">Health & LIFESTYLE</h3>
+                                                <h3 class="title-bg">Poems</h3>
                                             </div>
                                         </div>
                                         <div class="col-sm-3 next-prev col-xs-3">
@@ -751,45 +476,23 @@
                                     </div>
                                 </div>
                                 <div class="carousel-inner">
-                                    <div class="item active">
-                                        <a href="#"><img
-                                                src="{{ asset('assets/frontend/images/news-slider-image/1.jpg') }}"
-                                                alt="" title="#slider-direction-1" /></a>
-                                        <div class="dsc">
-                                            <span class="date">
-                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                November 28, 2017
-                                            </span>
-                                            <span class="comment">
-                                                <a href="#"> <i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                                </a>
-                                            </span>
-                                            <h4><a href="blog-single.html"> Nam suscipit pretium consectetur. Proin
-                                                    tristique fermentum.</a></h4>
-                                            <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste
-                                                rhoncus sem the purus eu sapien curabitur.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="item">
-                                        <a href="#"><img
-                                                src="{{ asset('assets/frontend/images/news-slider-image/3.jpg') }}"
-                                                alt="" title="#slider-direction-1" /></a>
-                                        <div class="dsc">
-                                            <span class="date">
-                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i> November 28,
-                                                2017
-                                            </span>
-                                            <span class="comment">
-                                                <a href="#"> <i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                                </a>
-                                            </span>
-                                            <h4><a href="blog-single.html"> Nam suscipit pretium consectetur. Proin
-                                                    tristique fermentum.</a></h4>
-                                            <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste
-                                                rhoncus sem the purus eu sapien curabitur.</p>
-                                        </div>
-                                    </div>
+                                    @foreach ( $poems as $poem )                                        
+                                        <div class="item active">
+                                            <a href="#"><img
+                                                    src="{{ $poem->main_img ? asset($poem->main_img) : asset('assets/frontend/images/news-slider-image/1.jpg') }}"
+                                                    alt="" title="#slider-direction-1" /></a>
+                                            <div class="dsc">
+                                                <span class="date">
+                                                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                                    {{ $poem->created_at ? $poem->created_at->format('M d, Y') : '' }}  
+                                                </span>
+                                                <h4><a href="blog-single.html"> {{$poem->title}}</a></h4>
+                                                <p>
+                                                    {!! Str::limit(strip_tags($poem->description), 100, '...') !!}
+                                                </p>
+                                            </div>
+                                        </div> 
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
