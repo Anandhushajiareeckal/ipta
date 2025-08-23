@@ -176,29 +176,28 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <ul class="news-post">
                                     @foreach ($otherTrendingNews as $news)
-                                        
-                                    @endforeach
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
-                                                <div class="item-post">
-                                                    <div class="row">
-                                                        <div
-                                                            class="col-lg-4 col-md-4 col-sm-3 col-xs-3 paddimg-right-none">
-                                                            <a href="blog-single.html"> <img
-                                                                    src="{{ $news->main_img }}"
-                                                                    alt="" title="Trending image"></a>
-                                                        </div>
-                                                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-9">
-                                                            <h4><a href="blog-single.html">{!! Str::limit(strip_tags($news->main_head),20, '...') !!}</a></h4>
-                                                            <span class="date"><i class="fa fa-calendar-check-o"
-                                                                    aria-hidden="true"></i> {{ $news->created_at ? $news->created_at->format('M d, Y') : '' }}</span>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
+                                                    <div class="item-post">
+                                                        <div class="row">
+                                                            <div
+                                                                class="col-lg-4 col-md-4 col-sm-3 col-xs-3 paddimg-right-none">
+                                                                <a href="blog-single.html"> <img
+                                                                        src="{{ $news->main_img }}"
+                                                                        alt="" title="Trending image"></a>
+                                                            </div>
+                                                            <div class="col-lg-8 col-md-8 col-sm-9 col-xs-9">
+                                                                <h4><a href="blog-single.html">{!! Str::limit(strip_tags($news->main_head),20, '...') !!}</a></h4>
+                                                                <span class="date"><i class="fa fa-calendar-check-o"
+                                                                        aria-hidden="true"></i> {{ $news->created_at ? $news->created_at->format('M d, Y') : '' }}</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
