@@ -53,12 +53,12 @@
                             @foreach($relatedNews as $item)
                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                     <div class="popular-post-img">
-                                        <a href="{{ route(' news.show', $item->slug) }}">
+                                        <a href="{{ route('news.show', $item->slug) }}">
                                             <img src="{{ $item->main_img ? asset($item->main_img) : asset('assets/frontend/images/single/2.jpg') }}" alt="Blog single photo">
                                         </a>
                                     </div>
                                     <h3>
-                                        <a href="{{ route(' news.show', $item->slug) }}">{{ $item->main_head }}</a>
+                                        <a href="{{ route('news.show', $item->slug) }}">{{ $item->main_head }}</a>
                                     </h3>
                                     <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ $item->created_at ? $item->created_at->format('M d, Y') : '' }}</span>
                                 </div>
@@ -87,10 +87,10 @@
                                             <div class="item-post">
                                                 <div class="row">
                                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 paddimg-right-none">
-                                                        <a href="{{ route(' news.show', $item->slug) }}"><img src="{{ $item->main_img ? asset($item->main_img) : asset('assets/frontend/images/popular/1.jpg') }}" alt="" title="News image" /></a>
+                                                        <a href="{{ route('news.show', $item->slug) }}"><img src="{{ $item->main_img ? asset($item->main_img) : asset('assets/frontend/images/popular/1.jpg') }}" alt="" title="News image" /></a>
                                                     </div>
                                                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                                        <h4><a href="{{ route(' news.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
+                                                        <h4><a href="{{ route('news.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
                                                         <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ $item->created_at ? $item->created_at->format('M d, Y') : '' }}</span>
                                                     </div>
                                                 </div>
@@ -108,9 +108,9 @@
                                     <ul>
                                         @foreach($trendingNews as $item)
                                         <li>
-                                            <a href="{{ route(' news.show', $item->slug) }}" class="hvr-bounce-to-right team-btn">The team</a><br/>
+                                            <a href="{{ route('news.show', $item->slug) }}" class="hvr-bounce-to-right team-btn">The team</a><br/>
                                             <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ $item->created_at ? $item->created_at->format('M d, Y') : '' }}</span>
-                                            <h4><a href="{{ route(' news.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
+                                            <h4><a href="{{ route('news.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
                                             <p>{{ \Illuminate\Support\Str::limit(strip_tags($item->main_desc), 80) }}</p>
                                         </li>
                                         @endforeach
