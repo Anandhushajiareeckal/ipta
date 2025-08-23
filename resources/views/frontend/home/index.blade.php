@@ -286,7 +286,7 @@
                                     <h4>Have a Question?</h4>
                                     <div class="newsletter">
                                         {{-- <input class="form-control" placeholder="Email address..." type="text"> --}}
-                                        <button class="btn-send" type="submit">Get in Touch</button><br>
+                                        <a href="{{ route('contact')}}"><button class="btn-send" type="submit">Get in Touch</button></a><br>
                                         <p>We’re here to help. Ask us anything!</p>
                                     </div>
                                 </div>
