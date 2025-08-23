@@ -28,7 +28,7 @@
                             <ul>
                                 <li>
                                     <div class="logo-area">
-                        <a href="index.html"><img src="{{ asset('assets/frontend/images/logo.png') }}"
+                        <a href="index.html"><img src="{{ asset($settings->logo) }}"
                                 alt="logo"></a>
                     </div>
                                 </li>
@@ -41,6 +41,7 @@
                                 <li><a href="{{ route('news') }}" class="has">News </i></a></li>
                                 <li><a href="{{ route('articles') }}" class="has">Articles </i></a></li>
                                 <li><a href="{{ route('events') }}" class="has">Events </i></a></li>
+                                <li><a href="{{ route('culturals') }}" class="has">Culturals </i></a></li>
                                 <li><a href="#" class="has dropdown-toggle">Memorials <i
                                             class="fa fa-chevron-down" aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
@@ -68,6 +69,8 @@
                                         <li><a href="{{ route('literature', ['book review']) }}">Book review</a></li>
                                     </ul>
                                 </li>
+                                <li><a href="{{ route('little') }}"> Little </i></a></li>
+                                <li><a href="{{ route('contact') }}"> Contact </i></a></li>
                             </ul>
                         </nav>
                     </div>

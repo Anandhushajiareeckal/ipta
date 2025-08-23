@@ -29,7 +29,19 @@ class HomeController extends Controller
         $firstEvent = $eventsCollection->first();
         $otherEvents = $eventsCollection->slice(1);
         $videos = \App\Models\Video::latest()->take(7)->get();
-        $poems = Literature::where('type', 'Poem')->latest()->take(5)->get();
+        $poems = Literature::where('type', 'poem')->latest()->take(4)->get();
+        $stories = Literature::where('type', 'story')->latest()->take(4)->get();
+        $counts = [
+            'blogs' => Blog::count(),
+            'news' => News::count(),
+            'articles' => \App\Models\Article::count(),
+            'events' => \App\Models\Event::count(),
+            'anusmaranaaa' => \App\Models\Memorial::where('type', 'anusmarana kurippu')->count(),
+            'jeevacharithrams' => \App\Models\Memorial::where('type', 'jeeva charithram')->count(),
+            'poem' => Literature::where('type', 'poem')->count(),
+            'story' => Literature::where('type', 'story')->count(),
+            'bookreview' => Literature::where('type', 'book review')->count(),
+        ];
         return view('frontend.home.index', compact(
             'breakingNews', 
             'firstLatestNews', 
@@ -43,7 +55,9 @@ class HomeController extends Controller
             'firstEvent',
             'otherEvents',
             'videos',
-            'poems'
+            'poems',
+            'stories',
+            'counts'
         ));
     }
 }

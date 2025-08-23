@@ -1,15 +1,16 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
-
+@php
+    $settings = App\Models\Setting::first();
+@endphp
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Darpan | Home</title>
-    <link rel="apple-touch-icon" href="https://rstheme.com/">
-    <link rel="shortcut icon" type="image/x-icon" href="images/fav.png">
+    <title>{{$settings->name}} | @yield('name')</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset($settings->favicon) }}">
     <!-- Place favicon.ico in the root directory -->
     <!-- all css here -->
     <!-- bootstrap v3.3.6 css -->
@@ -43,7 +44,7 @@
 
 <body class="home">
     <!--Preloader area Start here-->
-    @include('frontend.layouts.preloader')
+    {{-- @include('frontend.layouts.preloader') --}}
     <!--Preloader area end here-->
 
     <!--Header area start here-->

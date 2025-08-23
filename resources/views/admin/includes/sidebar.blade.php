@@ -55,17 +55,32 @@
                 {{-- Culturals --}}
                 <li>
                     <a href="{{ route('admin.culturals.index') }}" class=" waves-effect">
-                        <i class="bx bx-culture"></i>
+                        <i class='bx  bx-globe'  ></i> 
                         <span key="t-ecommerce">Culturals</span>
                     </a>
                 </li>
                 {{-- memorials--}}
                 <li>
                     <a href="{{ route('admin.memorials.index') }}" class=" waves-effect">
-                        <i class="bx bx-memorial"></i>
+                        <i class='bx  bx-directions'  ></i> 
                         <span key="t-ecommerce">Memorials</span>
                     </a>
                 </li>
+                {{-- Gallery --}}
+                <li>
+                    <a href="{{ route('admin.gallery.index') }}" class=" waves-effect">
+                        <i class="bx bx-image"></i>
+                        <span key="t-ecommerce">Gallery</span>
+                    </a>
+                </li>
+                {{-- Videos --}}
+                <li>
+                    <a href="{{ route('admin.videos.index') }}" class=" waves-effect">
+                        <i class="bx bx-video"></i>
+                        <span key="t-ecommerce">Videos</span>
+                    </a>
+                </li>
+
                 {{-- Literature --}}
                 <li>
                     <a href="{{ route('admin.literature.index') }}" class="waves-effect">
@@ -74,6 +89,35 @@
                     </a>
                 </li>
                 
+                {{-- Little --}}
+                <li>
+                    <a href="{{ route('admin.little.index') }}" class=" waves-effect">
+                        <i class="bx bx-list-check"></i>
+                        <span key="t-ecommerce">Little</span>
+                    </a>
+                </li>
+                {{-- Enquiry --}}
+                <li>
+                    <a href="{{ route('admin.enquiry.index') }}" class=" waves-effect">
+                        <i class="bx bx-envelope"></i>
+                        <span key="t-ecommerce">Enquiry</span>
+                    </a>
+                </li>
+
+                {{-- Contact --}}
+                <li>
+                    <a href="{{ route('admin.contact.index') }}" class=" waves-effect">
+                        <i class="bx bx-phone"></i>
+                        <span key="t-ecommerce">Contact</span>
+                    </a>
+                </li> 
+                {{-- Settings --}}
+                <li>
+                    <a href="{{ route('admin.settings.edit') }}" class=" waves-effect">
+                        <i class="bx bx-cog"></i>
+                        <span key="t-ecommerce">Settings</span>
+                    </a>
+                </li>
 
             </ul>
         </div>

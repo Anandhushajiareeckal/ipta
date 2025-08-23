@@ -3733,7 +3733,7 @@ span.cat i {
   padding-top: 12px !important;
 }
 .sidebar-area .like-box-area ul li {
-  background: #fbc02d;
+  background: #FD1D1D;
   margin-bottom: 15px !important;
   position: relative;
 }
@@ -3749,7 +3749,9 @@ span.cat i {
   padding: 0;
 }
 .sidebar-area .like-box-area ul li a .fa-facebook,
+.sidebar-area .like-box-area ul li a .fa-instagram,
 .sidebar-area .like-box-area ul li a .fa-twitter,
+.sidebar-area .like-box-area ul li a .fa-whatsapp,
 .sidebar-area .like-box-area ul li a .fa-rss {
   background: rgba(40, 50, 121, 0.2);
   padding: 25px 30px;
@@ -3784,7 +3786,7 @@ span.cat i {
   background: #3b589c;
 }
 .sidebar-area .like-box-area ul li:last-child {
-  background: #01aaed;
+  background: #25D366;
 }
 .sidebar-area .recent-post-area h3 {
   font-size: 20px;

@@ -16,22 +16,25 @@
                             <div class="bg-primary bg-soft">
                                 <div class="row">
                                     <div class="col-7">
+                                        @php
+                                            $settings = App\Models\Setting::first();
+                                        @endphp
                                         <div class="text-primary p-4">
                                             <h5 class="text-primary">Welcome Back !</h5>
-                                            <p>Sign in to continue to Keralavision .</p>
+                                            <p>Sign in to continue to <br> {{@$settings->name}} .</p>
                                         </div>
                                     </div>
                                     <div class="col-5 align-self-end">
-                                        <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                                        <img src="" alt="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body pt-0"> 
                                 <div class="auth-logo">
-                                    <a class="auth-logo-light">
+                                    {{-- <a class="auth-logo-light">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
-                                                {{-- <img src="{{asset('assets/images/logo.jpg')}}" alt="" class="rounded-circle" height="34"> --}}
+                                                <img src="{{asset(@$settings->logo)}}" alt="" class="rounded-circle" height="34">
                                             </span>
                                         </div>
                                     </a>
@@ -39,10 +42,10 @@
                                     <a  class="auth-logo-dark">
                                         <div class="avatar-md profile-user-wid mb-4">
                                             <span class="rounded-circle">
-                                                {{-- <img src="{{asset('/storage/'.setting('logo_dark'))}}" alt="" class="" height="40"> --}}
+                                                <img src="{{asset(@$settings->logo)}}" alt="" class="" height="40">
                                             </span>
                                         </div>
-                                    </a>
+                                    </a> --}}
                                 </div>
                                 <div class="p-2">
                                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">

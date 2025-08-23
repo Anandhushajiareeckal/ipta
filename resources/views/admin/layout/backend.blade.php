@@ -461,10 +461,10 @@
                             <div class="dropdown-divider"></div>
                             <div class="dropdown-divider"></div>
 
-                            <a class="dropdown-item " href=""><i
+                            <a class="dropdown-item " href="{{ route('admin.settings.edit') }}"><i
                                     class="fa fa-cog"></i> <span key="t-logout">Settings</span></a>
 
-                            <form id="logout-form" action="" method="POST" class="d-inline">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline">
                                 @csrf
                                 <button type="submit" class="dropdown-item text-danger">
                                     <i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>

@@ -13,14 +13,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
 
 //about us
-    Route::get('/about-us', [App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
+Route::get('/about-us', [App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
 
-    Route::get('/news', [App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('news');
+Route::get('/news', [App\Http\Controllers\Frontend\NewsController::class, 'index'])->name('news');
 
-    Route::get('/news/{slug}', [App\Http\Controllers\Frontend\NewsController::class, 'show'])->name('news.show');
+Route::get('/news/{slug}', [App\Http\Controllers\Frontend\NewsController::class, 'show'])->name('news.show');
 
 
 Route::get('/articles', [\App\Http\Controllers\Frontend\ArticleController::class, 'index'])->name('articles');
@@ -57,7 +58,9 @@ Route::get('/little/{slug}', [\App\Http\Controllers\Frontend\LittleController::c
 Route::get('/blog', [\App\Http\Controllers\Frontend\BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [\App\Http\Controllers\Frontend\BlogController::class, 'show'])->name('blog.show');
 
+Route::get('/contact-us', [App\Http\Controllers\Frontend\ContactController::class, 'index'])->name('contact');
 
+Route::post('/enquiry', [App\Http\Controllers\Frontend\EnquiryController::class, 'store'])->name('enquiry.store');
 
 
 Route::get('/dashboard', function () {
@@ -70,4 +73,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

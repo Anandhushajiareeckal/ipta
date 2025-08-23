@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
-    
+
     // Grouped about routes
     Route::prefix('about')->name('about.')->group(function () {
         Route::get('/', [App\Http\Controllers\Admin\AboutController::class, 'edit'])->name('edit');
@@ -27,7 +27,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [App\Http\Controllers\Admin\NewsController::class, 'edit'])->name('edit');
         Route::post('/update', [App\Http\Controllers\Admin\NewsController::class, 'update'])->name('update');
     });
-    
+
     //resource rout for news
     Route::resource('news', App\Http\Controllers\Admin\NewsController::class);
     Route::resource('articles', \App\Http\Controllers\Admin\ArticleController::class);
@@ -39,4 +39,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('literature', \App\Http\Controllers\Admin\LiteratureController::class);
     Route::resource('little', \App\Http\Controllers\Admin\LittleController::class);
     Route::resource('blog', \App\Http\Controllers\Admin\BlogController::class);
-}); 
+
+    Route::get('/contact', [App\Http\Controllers\Admin\ContactController::class, 'index'])->name('contact.index');
+    Route::put('/contact', [App\Http\Controllers\Admin\ContactController::class, 'update'])->name('contact.update');
+
+    Route::get('enquiries', [\App\Http\Controllers\Admin\EnquiryController::class, 'index'])->name('enquiry.index');
+    Route::get('enquiries/{enquiry}', [\App\Http\Controllers\Admin\EnquiryController::class, 'show'])->name('enquiry.show');
+
+    Route::get('/settings/edit', [\App\Http\Controllers\Admin\SettingController::class, 'edit'])->name('settings.edit');
+    Route::put('/settings/update', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('settings.update');
+
+});

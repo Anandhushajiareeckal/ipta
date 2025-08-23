@@ -504,7 +504,7 @@
                                     <div class="row">
                                         <div class="col-sm-9 col-xs-9">
                                             <div class="view-area">
-                                                <h3 class="title-bg">Politics</h3>
+                                                <h3 class="title-bg">Stories</h3>
                                             </div>
                                         </div>
 
@@ -521,264 +521,63 @@
                                     </div>
                                 </div>
                                 <div class="carousel-inner">
-                                    <div class="item active">
+                                    @foreach ($stories as $story )
+                                        <div class="item active">
                                         <a href="#"><img
-                                                src="{{ asset('assets/frontend/images/news-slider-image/2.jpg') }}"
+                                                src="{{ $story->main_img ? asset($story->main_img) : asset('assets/frontend/images/news-slider-image/2.jpg') }}"
                                                 alt="" title="#slider-direction-1" /></a>
                                         <div class="dsc">
                                             <span class="date">
                                                 <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                November 28, 2017
+                                                {{ $story->created_at ? $story->created_at->format('M d, Y') : '' }}
                                             </span>
                                             <span class="comment">
                                                 <a href="#"> <i class="fa fa-comment-o" aria-hidden="true"></i> 50
                                                 </a>
                                             </span>
-                                            <h4><a href="blog-single.html">Disabled people must be front and centre on TV –
-                                                    representation</a></h4>
-                                            <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste
-                                                rhoncus sem the purus eu sapien curabitur.</p>
+                                            <h4><a href="blog-single.html">{{ $story->title }}</a></h4>
+                                            <p>{!! Str::limit(strip_tags($story->description), 100, '...') !!}</p>
                                         </div>
                                     </div>
-                                    <div class="item">
-                                        <a href="#"><img
-                                                src="{{ asset('assets/frontend/images/news-slider-image/4.jpg') }}"
-                                                alt="" title="#slider-direction-1" /></a>
-                                        <div class="dsc">
-                                            <span class="date">
-                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                November 28, 2017 </span>
-                                            <span class="comment">
-                                                <a href="#"> <i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                                </a></span>
-                                            <h4><a href="blog-single.html">After Kim Briggs’s death, cyclists must realise
-                                                    that they are traffic too</a></h4>
-                                            <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste
-                                                rhoncus sem the purus eu sapien curabitur.</p>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <a href="#"><img
-                                                src="{{ asset('assets/frontend/images/news-slider-image/2.jpg') }}"
-                                                alt="" title="#slider-direction-1" /></a>
-                                        <div class="dsc">
-                                            <span class="date">
-                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                November 28, 2017 </span>
-                                            <span class="comment">
-                                                <a href="#"> <i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                                </a></span>
-                                            <h4><a href="blog-single.html">The new-style GCSEs show why politicians must do
-                                                    more explaining.</a></h4>
-                                            <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste
-                                                rhoncus sem the purus eu sapien curabitur.</p>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--End Two Slider -->
-                    <!--Around Area Start Here -->
-                    {{-- <div class="view-area separator-large3">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                    </div>
-                                    <div class="item">
-                                        <a href="#"><img
-                                                src="{{ asset('assets/frontend/images/news-slider-image/2.jpg') }}"
-                                                alt="" title="#slider-direction-1" /></a>
-                                        <div class="dsc">
-                                            <span class="date">
-                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                November 28, 2017
-                                            </span>
-                                            <span class="comment">
-                                                <a href="#"> <i class="fa fa-comment-o" aria-hidden="true"></i> 50
-                                                </a>
-                                            </span>
-                                            <h4><a href="blog-single.html">The new-style GCSEs show why politicians must do
-                                                    more explaining.</a></h4>
-                                            <p>Blandit rutrum, erat et egestas ultricies, dolor tortor egestas enim, quiste
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Two Slider -->
-                    <!--Around Area Start Here -->
-                    {{-- <div class="view-area separator-large3">
-                        <div class="row">
-                            <div class="col-sm-8">
-                                <h3 class="title-bg">Around the world</h3>
-                            </div>
-                            <div class="col-sm-4 text-right">
-                                <a href="#">View More <i class="fa fa-angle-double-right"
-                                        aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="news-post news-post2 around-news">
-                        <li>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 content">
-                                    <div class="item-post">
-
-                                        <div class="blog-image">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/world/5.jpg') }}"
-                                                    alt="" title="News image" /></a>
-                                        </div>
-                                        <div class="content">
-                                            <span class="date">
-                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                November 28, 2017
-                                            </span>
-                                            <span class="comment">
-                                                <a href="#"> <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                    50
-                                                </a>
-                                            </span>
-                                            <h4><a href="blog-single.html">Clinton campaign jilted as FBI to search
-                                                    emails</a></h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestib vitae libero
-                                                vel purus tincidunt aliquet at nec erat. Mauris the diam, ultrices quis leo
-                                                sed lacinia egestas.The wise man there always holds in these matters.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 content">
-                                    <div class="item-post">
-                                        <div class="blog-image">
-                                            <a href="blog-single.html"><img
-                                                    src="{{ asset('assets/frontend/images/world/6.jpg') }}"
-                                                    alt="" title="News image" /></a>
-                                        </div>
-                                        <div class="content">
-                                            <span class="date">
-                                                <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                November 28, 2017
-                                            </span>
-                                            <span class="comment">
-                                                <a href="#"> <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                                    50
-                                                </a>
-                                            </span>
-                                            <h4><a href="blog-single.html">Clinton campaign jilted as FBI to search
-                                                    emails</a></h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestib vitae libero
-                                                vel purus tincidunt aliquet at nec erat. Mauris the diam, ultrices quis leo
-                                                sed lacinia egestas.The wise man there always holds in these matters.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="news-post news-post2 related">
-                        <li>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 content">
-                                    <div class="item-post">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 paddimg-right-none">
-                                                <a href="blog-single.html"><img
-                                                        src="{{ asset('assets/frontend/images/world/1.jpg') }}"
-                                                        alt="" title="News image" /></a>
-                                            </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                                                <h4><a href="blog-single.html">Pellentesque Odio Nisi Euismod In
-                                                        Pharet</a></h4>
-                                                <span class="date">
-                                                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                    November 28, 2017
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 content">
-                                    <div class="item-post">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 paddimg-right-none">
-                                                <a href="blog-single.html"><img
-                                                        src="{{ asset('assets/frontend/images/world/2.jpg') }}"
-                                                        alt="" title="News image" /></a>
-                                            </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                                                <h4><a href="blog-single.html">prepare for Russian election</a></h4>
-                                                <span class="date">
-                                                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                    June 28, 2017
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 content">
-                                    <div class="item-post">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 paddimg-right-none">
-                                                <a href="blog-single.html"><img
-                                                        src="{{ asset('assets/frontend/images/world/3.jpg') }}"
-                                                        alt="" title="News image" /></a>
-                                            </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                                                <h4><a href="blog-single.html"> Erant Aeque Neius No Numes Electram </a>
-                                                </h4>
-                                                <span class="date">
-                                                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                    November 28, 2017
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 content">
-                                    <div class="item-post">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 paddimg-right-none">
-                                                <a href="blog-single.html"><img
-                                                        src="{{ asset('assets/frontend/images/world/4.jpg') }}"
-                                                        alt="" title="News image" /></a>
-                                            </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                                                <h4><a href="blog-single.html">YouTube Acquire Twitch <br />For
-                                                        $1Billion</a></h4>
-                                                <span class="date">
-                                                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                    June 28, 2017
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul> --}}
+                    
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 paddimg-left-none">
-                    <h3 class="title-bg featured-title">Categories</h3>
+                    <h3 class="title-bg featured-title">Pages</h3>
                     <div class="sidebar">
                         <div class="categories-home separator-large3">
                             {{-- <h3 class="title-bg">Categories</h3> --}}
                             <ul>
-                                <li><a href="category.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        Business <span>45</span></a></li>
-                                <li><a href="category-world.html"><i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        World <span>70</span></a></li>
-                                <li><a href="category-fashion.html"><i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        Fashion <span>45</span></a></li>
-                                <li><a href="category-politics.html"><i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        Politics <span>55</span></a></li>
-                                <li><a href="category-sports.html"><i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        Sports <span>50</span></a></li>
-                                <li><a href="category-health.html"><i class="fa fa-angle-right" aria-hidden="true"></i>
-                                        Health <span>65</span></a></li>
+                                <li><a href="{{route('blog')}}"> <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Blog <span>{{$counts['blogs']}}</span></a></li>
+                                        
+                                <li><a href="{{route('news')}}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        News <span>{{$counts['news']}}</span></a></li>
+
+                                <li><a href="{{route('articles')}}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Articles <span>{{$counts['articles']}}</span></a></li>
+
+                                <li><a href="{{route('events')}}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Events <span>{{$counts['events']}}</span></a></li>
+
+                                <li><a href="{{route('memorials', ['anusmarana kurippu'])}}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Anusmarana Kurippu <span>{{$counts['anusmaranaaa']}}</span></a></li>
+
+                                <li><a href="{{route('memorials', ['jeeva charithram'])}}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Jeeve Charithram <span>{{$counts['jeevacharithrams']}}</span></a></li>
+
+                                <li><a href="{{route('literature', ['poem'])}}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Poem <span>{{$counts['poem']}}</span></a></li>
+
+                                <li><a href="{{route('literature', ['story'])}}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Story <span>{{$counts['story']}}</span></a></li>
+
+                                <li><a href="{{route('literature', ['book review'])}}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        Book Review <span>{{$counts['bookreview']}}</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -788,7 +587,7 @@
     </div>
     <!-- All News Section end Here -->
     <!-- Footer Area Section Start Here -->
-    <div class="add-section separator-large2">
+    {{-- <div class="add-section separator-large2">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -796,5 +595,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

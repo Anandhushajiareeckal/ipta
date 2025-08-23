@@ -1,3 +1,6 @@
+@php
+    $settings = App\Models\Setting::first();
+@endphp
 <!doctype html>
 <html lang="en">
 
@@ -8,12 +11,12 @@
         $fav =  @$general->favicon; --}}
     {{-- @endphp --}}
         <meta charset="utf-8" />
-        {{-- <title>Login {{setting('site_name')}} Dashboard</title> --}}
+        <title>Login | {{@$settings->name}} Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="" name="description" />
         <meta content="" name="author" />
         <!-- App favicon -->
-        {{-- <link rel="shortcut icon" href="{{ asset(setting('favicon', 'default-favicon.ico')) }}"> --}}
+        <link rel="shortcut icon" href="{{ asset(@$settings->favicon) }}">
 
         <!-- owl.carousel css -->
         <link rel="stylesheet" href="{{asset('assets/backend/assets/libs/owl.carousel/assets/backend/assets/owl.carousel.min.css')}}">
