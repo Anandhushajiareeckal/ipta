@@ -27,7 +27,7 @@ class EventController extends Controller
             'main_desc'    => 'nullable|string',
             'banner_desc'  => 'nullable|string',
             // 'banner_img'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'slug'         => 'required|string|max:255|unique:events,slug',
+            // 'slug'         => 'required|string|max:255|unique:events,slug',
         ]);
 
         if ($request->hasFile('main_img')) {
@@ -62,7 +62,7 @@ class EventController extends Controller
             'main_desc'    => 'nullable|string',
             'banner_desc'  => 'nullable|string',
             // 'banner_img'   => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'slug'         => 'required|string|max:255|unique:events,slug,' . $id,
+            // 'slug'         => 'required|string|max:255|unique:events,slug,' . $id,
         ]);
 
         if ($request->hasFile('main_img')) {

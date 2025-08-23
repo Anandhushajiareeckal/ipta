@@ -29,10 +29,10 @@
                         <label for="banner_img" class="form-label">Banner Image</label>
                         <input type="file" name="banner_img" id="banner_img" class="form-control">
                     </div> --}}
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="slug" class="form-label">Slug</label>
                         <input type="text" name="slug" id="slug" class="form-control" value="{{ old('slug') }}" required>
-                    </div>
+                    </div> --}}
                     <button type="submit" class="btn btn-success">Create Event</button>
                 </form>
             </div>
