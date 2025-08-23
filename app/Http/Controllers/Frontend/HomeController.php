@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Blog;
 use App\Models\Literature;
+use App\Models\Contact;
 
 class HomeController extends Controller
         
@@ -31,6 +32,7 @@ class HomeController extends Controller
         $videos = \App\Models\Video::latest()->take(7)->get();
         $poems = Literature::where('type', 'poem')->latest()->take(4)->get();
         $stories = Literature::where('type', 'story')->latest()->take(4)->get();
+        $contact = Contact::first();
         $counts = [
             'blogs' => Blog::count(),
             'news' => News::count(),
@@ -57,7 +59,8 @@ class HomeController extends Controller
             'videos',
             'poems',
             'stories',
-            'counts'
+            'counts',
+            'contact'
         ));
     }
 }

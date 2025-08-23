@@ -261,16 +261,13 @@
                     <div class="like-box">
                         <ul>
                             <li>
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> </a><span>210,956
-                                    <br />likes</span>
+                                <a href="{{ json_decode($contact->social_media)->facebook ?? '#' }}"><i class="fa fa-facebook" aria-hidden="true"></i> </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> </a><span>350,580
-                                    <br />followers</span>
+                                <a href="{{ json_decode($contact->social_media)->instagram ?? '#' }}"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
                             </li>
                             <li class="last">
-                                <a href="#"><i class="fa fa-rss" aria-hidden="true"></i> </a><span>210,956
-                                    <br />subscribers</span>
+                                <a href="{{ json_decode($contact->social_media)->whatsapp ?? '#' }}"><i class="fa fa-whatsapp" aria-hidden="true"></i> </a>
                             </li>
                         </ul>
                     </div>
