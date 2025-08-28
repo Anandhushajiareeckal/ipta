@@ -26,7 +26,7 @@ class CulturalController extends Controller
             'main_img'     => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'main_desc'    => 'nullable|string',
             'banner_desc'  => 'nullable|string',
-            'slug'         => 'required|string|max:255|unique:culturals,slug',
+            // 'slug'         => 'required|string|max:255|unique:culturals,slug',
         ]);
 
         if ($request->hasFile('main_img')) {
@@ -54,7 +54,7 @@ class CulturalController extends Controller
             'main_img'     => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'main_desc'    => 'nullable|string',
             'banner_desc'  => 'nullable|string',
-            'slug'         => 'required|string|max:255|unique:culturals,slug,' . $id,
+            // 'slug'         => 'required|string|max:255|unique:culturals,slug,' . $id,
         ]);
 
         if ($request->hasFile('main_img')) {
