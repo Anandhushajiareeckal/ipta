@@ -39,7 +39,6 @@
                                 <li><a href="{{ route('about') }}" class="has">About </i></a></li>
                                 <li><a href="{{ route('blog') }}" class="has">Blog </i></a></li>
                                 <li><a href="{{ route('news') }}" class="has">News </i></a></li>
-                                <li><a href="{{ route('articles') }}" class="has">Articles </i></a></li>
                                 <li><a href="{{ route('events') }}" class="has">Events </i></a></li>
                                 <li><a href="{{ route('culturals') }}" class="has">Culturals </i></a></li>
                                 <li><a href="#" class="has dropdown-toggle">Memorials <i
@@ -66,10 +65,17 @@
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('literature', ['poem']) }}">Poem</a></li>
                                         <li><a href="{{ route('literature', ['story']) }}">Story</a></li>
+                                        <li><a href="{{ route('articles') }}" class="has">Articles </i></a></li>
                                         <li><a href="{{ route('literature', ['book review']) }}">Book review</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('little') }}"> Little </i></a></li>
+                                <li><a href="#" class="has dropdown-toggle">Elements <i
+                                            class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ route('little') }}"> Little </i></a></li>
+                                        <li><a href="{{ route('jana-sangeetham') }}"> Jana Sangeetham </i></a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="{{ route('contact') }}"> Contact </i></a></li>
                             </ul>
                         </nav>

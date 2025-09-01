@@ -58,6 +58,11 @@ Route::get('/little/{slug}', [\App\Http\Controllers\Frontend\LittleController::c
 Route::get('/blog', [\App\Http\Controllers\Frontend\BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [\App\Http\Controllers\Frontend\BlogController::class, 'show'])->name('blog.show');
 
+
+Route::get('/jana-sangeetham', [\App\Http\Controllers\Frontend\JanaSangeethamController::class, 'index'])->name('jana-sangeetham');
+Route::get('/jana-sangeetham/{slug}', [\App\Http\Controllers\Frontend\JanaSangeethamController::class, 'show'])->name('jana-sangeetham.show');
+
+
 Route::get('/contact-us', [App\Http\Controllers\Frontend\ContactController::class, 'index'])->name('contact');
 
 Route::post('/enquiry', [App\Http\Controllers\Frontend\EnquiryController::class, 'store'])->name('enquiry.store');

@@ -80,11 +80,11 @@
                             <li>
                                 <div class="right-content">
                                     <span class="category"><a class="cat-link"
-                                            href="{{ route('articles', $latestArticle->slug) }}">Articles</a></span>
+                                            href="{{ route('articles.show', $latestArticle->slug) }}">Articles</a></span>
                                     <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true">
                                         </i>{{ $latestArticle->created_at ? $latestArticle->created_at->format('M d, Y') : '' }}</span>
                                     <h3><a
-                                            href="blog-single.html">{{ Str::words(strip_tags($latestArticle->main_head), 10, '...') }}</a>
+                                            href="{{ route('articles.show', $latestArticle->slug) }}">{{ Str::words(strip_tags($latestArticle->main_head), 10, '...') }}</a>
                                     </h3>
                                 </div>
                                 <div class="right-image"><a href="blog-single.html"><img
@@ -485,7 +485,7 @@
                                                     <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
                                                     {{ $poem->created_at ? $poem->created_at->format('M d, Y') : '' }}  
                                                 </span>
-                                                <h4><a href="blog-single.html"> {{$poem->title}}</a></h4>
+                                                <h4><a href="{{ route('literature.show', ['poem',$poem->slug]) }}"> {{$poem->title}}</a></h4>
                                                 <p>
                                                     {!! Str::limit(strip_tags($poem->description), 100, '...') !!}
                                                 </p>
@@ -537,7 +537,7 @@
                                                 <a href="#"> <i class="fa fa-comment-o" aria-hidden="true"></i> 50
                                                 </a>
                                             </span>
-                                            <h4><a href="blog-single.html">{{ $story->title }}</a></h4>
+                                            <h4><a href="{{ route('literature.show', ['story',$story->slug]) }}">{{ $story->title }}</a></h4>
                                             <p>{!! Str::limit(strip_tags($story->description), 100, '...') !!}</p>
                                         </div>
                                     </div>

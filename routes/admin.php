@@ -49,4 +49,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/settings/edit', [\App\Http\Controllers\Admin\SettingController::class, 'edit'])->name('settings.edit');
     Route::put('/settings/update', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('settings.update');
 
+    Route::resource('jana-sangeetham', \App\Http\Controllers\Admin\JanaSangeethamController::class);
+
 });

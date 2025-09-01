@@ -78,4 +78,4 @@
             </div>
         </div>
     </div>
-    <!-- Articles Page End Here
+@endsection

@@ -1,7 +1,5 @@
 @extends('frontend.layouts.app')
-@section('title', $literature->title)
 @section('content')
-<!-- Inner Page Header section start here -->
 <div class="inner-page-header">
     <div class="banner">
         <img src="{{ asset('assets/frontend/images/banner/3.jpg') }}" alt="Banner">
@@ -12,32 +10,29 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="header-page-locator">
                         <ul>
-                            <li><a href="{{ url('/') }}">Home <i class="fa fa-compress" aria-hidden="true"></i> </a> Literature</li>
+                            <li><a href="{{ url('/') }}">Home <i class="fa fa-compress" aria-hidden="true"></i> </a> Jana Sangeetham</li>
                         </ul>
                     </div>
                     <div class="header-page-title">
-                        <h1>LITERATURE</h1>
+                        <h1>JANA SANGEETHAM</h1>
                     </div>
                     <div class="header-page-subtitle">
-                        <p>{{ $literature->title }}</p>
+                        <p>{{ $janaSangeetham->banner_desc }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Inner Page Header section end here -->
-
-<!-- Literature Single Start Here -->
 <div class="single-blog-page-area">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="single-image">
-                    <img src="{{ $literature->images && count($literature->images) ? asset($literature->images[0]) : asset('assets/frontend/images/single/1.jpg') }}" alt="Literature photo">
+                    <img src="{{ $janaSangeetham->main_img ? asset($janaSangeetham->main_img) : asset('assets/frontend/images/single/1.jpg') }}" alt="Jana Sangeetham photo">
                 </div>
-                <h3><a href="#">{{ $literature->title }}</a> <span class="badge bg-info">{{ ucfirst($literature->type) }}</span></h3>
-                <p>{!! $literature->description !!}</p>
+                <h3><a href="#">{{ $janaSangeetham->main_head }}</a></h3>
+                <p>{!! $janaSangeetham->main_desc !!}</p>
                 <div class="share-section">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 life-style">
@@ -46,7 +41,7 @@
                             </span>
                             <span class="date">
                                 <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                {{ $literature->created_at ? $literature->created_at->format('M d, Y') : '' }}
+                                {{ $janaSangeetham->created_at ? $janaSangeetham->created_at->format('M d, Y') : '' }}
                             </span>
                         </div>
                     </div>
@@ -54,18 +49,14 @@
                 <div class="like-section">
                     <h3 class="title-bg">YOU MIGHT ALSO LIKE</h3>
                     <div class="row">
-                        @foreach($relatedLiterature as $item)
+                        @foreach($relatedJanaSangeethams as $item)
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="popular-post-img">
-                                    <a href="{{ route('literature.show', [$item->type, $item->slug]) }}">
-                                        <img src="{{ $item->images && count($item->images) ? asset($item->images[0]) : asset('assets/frontend/images/single/2.jpg') }}" alt="Literature photo">
+                                    <a href="{{ route('jana-sangeetham.show', $item->slug) }}">
+                                        <img src="{{ $item->main_img ? asset($item->main_img) : asset('assets/frontend/images/single/2.jpg') }}" alt="Jana Sangeetham photo">
                                     </a>
                                 </div>
-                                <h3>
-                                    <a href="{{ route('literature.show', [$item->type, $item->slug]) }}">{{ $item->title }}</a>
-                                </h3>
-                                <span class="badge bg-info">{{ ucfirst($item->type) }}</span>
-                                <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ $item->created_at ? $item->created_at->format('M d, Y') : '' }}</span>
+                                <h4><a href="{{ route('jana-sangeetham.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
                             </div>
                         @endforeach
                     </div>
@@ -83,20 +74,19 @@
                         </ul>
                     </div>
                     <div class="recent-post-area hot-news">
-                        <h3 class="title-bg">Recent Literature</h3>
+                        <h3 class="title-bg">Recent Jana Sangeethams</h3>
                         <ul class="news-post">
-                            @foreach($recentLiterature as $item)
+                            @foreach($recentJanaSangeethams as $item)
                             <li>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content">
                                         <div class="item-post">
                                             <div class="row">
                                                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 paddimg-right-none">
-                                                    <a href="{{ route('literature.show', [$item->type, $item->slug]) }}"><img src="{{ $item->images && count($item->images) ? asset($item->images[0]) : asset('assets/frontend/images/popular/1.jpg') }}" alt="" title="Literature image" /></a>
+                                                    <a href="{{ route('jana-sangeetham.show', $item->slug) }}"><img src="{{ $item->main_img ? asset($item->main_img) : asset('assets/frontend/images/popular/1.jpg') }}" alt="" title="Jana Sangeetham image" /></a>
                                                 </div>
                                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                                                    <h4><a href="{{ route('literature.show', [$item->type, $item->slug]) }}">{{ $item->title }}</a></h4>
-                                                    <span class="badge bg-info">{{ ucfirst($item->type) }}</span>
+                                                    <h4><a href="{{ route('jana-sangeetham.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
                                                     <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ $item->created_at ? $item->created_at->format('M d, Y') : '' }}</span>
                                                 </div>
                                             </div>
@@ -108,17 +98,16 @@
                         </ul>
                     </div>
                     <div class="trending-post-area">
-                        <h3 class="title-bg">Trending Literature</h3>
+                        <h3 class="title-bg">Trending Jana Sangeethams</h3>
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <ul>
-                                    @foreach($trendingLiterature as $item)
+                                    @foreach($trendingJanaSangeethams as $item)
                                     <li>
-                                        <a href="{{ route('literature.show', [$item->type, $item->slug]) }}" class="hvr-bounce-to-right team-btn">The team</a><br/>
-                                        <span class="badge bg-info">{{ ucfirst($item->type) }}</span>
+                                        <a href="{{ route('jana-sangeetham.show', $item->slug) }}" class="hvr-bounce-to-right team-btn">The team</a><br/>
                                         <span class="date"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ $item->created_at ? $item->created_at->format('M d, Y') : '' }}</span>
-                                        <h4><a href="{{ route('literature.show', [$item->type, $item->slug]) }}">{{ $item->title }}</a></h4>
-                                        <p>{{ \Illuminate\Support\Str::limit(strip_tags($item->description), 80) }}</p>
+                                        <h4><a href="{{ route('jana-sangeetham.show', $item->slug) }}">{{ $item->main_head }}</a></h4>
+                                        <p>{{ \Illuminate\Support\Str::limit(strip_tags($item->main_desc), 80) }}</p>
                                     </li>
                                     @endforeach
                                 </ul>
