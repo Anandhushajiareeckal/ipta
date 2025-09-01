@@ -472,10 +472,13 @@
                                     </div>
                                 </div>
                                 <div class="carousel-inner">
-                                    @foreach ( $poems as $poem )                                        
-                                        <div class="item active">
+                                    @foreach ( $poems as $poem ) 
+                                        @php
+                                            $poem_image = is_array($poem->images) ? $poem->images[0] : json_decode($poem->images, true)[0] ?? null;
+                                        @endphp                                       
+                                        <div class="item @if($loop->first) active @endif">
                                             <a href="#"><img
-                                                    src="{{ $poem->main_img ? asset($poem->main_img) : asset('assets/frontend/images/news-slider-image/1.jpg') }}"
+                                                    src="{{ $poem_image ? asset($poem_image) : asset('assets/frontend/images/news-slider-image/1.jpg') }}"
                                                     alt="" title="#slider-direction-1" /></a>
                                             <div class="dsc">
                                                 <span class="date">
@@ -518,9 +521,12 @@
                                 </div>
                                 <div class="carousel-inner">
                                     @foreach ($stories as $story )
-                                        <div class="item active">
+                                        @php
+                                            $story_image = is_array($story->images) ? $story->images[0] : json_decode($story->images, true)[0] ?? null;
+                                        @endphp  
+                                        <div class="item @if($loop->first) active @endif">
                                         <a href="#"><img
-                                                src="{{ $story->main_img ? asset($story->main_img) : asset('assets/frontend/images/news-slider-image/2.jpg') }}"
+                                                src="{{ $story_image ? asset($story_image) : asset('assets/frontend/images/news-slider-image/2.jpg') }}"
                                                 alt="" title="#slider-direction-1" /></a>
                                         <div class="dsc">
                                             <span class="date">
