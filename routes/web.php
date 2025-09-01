@@ -63,6 +63,10 @@ Route::get('/jana-sangeetham', [\App\Http\Controllers\Frontend\JanaSangeethamCon
 Route::get('/jana-sangeetham/{slug}', [\App\Http\Controllers\Frontend\JanaSangeethamController::class, 'show'])->name('jana-sangeetham.show');
 
 
+Route::get('/ipta-theatre', [\App\Http\Controllers\Frontend\IptaTheatreController::class, 'index'])->name('ipta-theatre');
+Route::get('/ipta-theatre/{slug}', [\App\Http\Controllers\Frontend\IptaTheatreController::class, 'show'])->name('ipta-theatre.show');
+
+
 Route::get('/contact-us', [App\Http\Controllers\Frontend\ContactController::class, 'index'])->name('contact');
 
 Route::post('/enquiry', [App\Http\Controllers\Frontend\EnquiryController::class, 'store'])->name('enquiry.store');

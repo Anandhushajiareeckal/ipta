@@ -50,5 +50,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::put('/settings/update', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('settings.update');
 
     Route::resource('jana-sangeetham', \App\Http\Controllers\Admin\JanaSangeethamController::class);
-
+    Route::resource('ipta-theatre', \App\Http\Controllers\Admin\IptaTheatreController::class);
 });
