@@ -22,15 +22,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="main-menu navbar-collapse collapse">
                         <nav>
                             <ul>
                                 <li>
                                     <div class="logo-area">
-                        <a href="index.html"><img src="{{ asset($settings->logo) }}"
-                                alt="logo"></a>
-                    </div>
+                                        <a href="/"><img src="{{ asset($settings->logo) }}" alt="logo" ></a>
+                                    </div>
                                 </li>
                                 <li>
                                     <a href="/" class="has dropdown-toggle">Home </a>
@@ -46,12 +45,13 @@
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('memorials', ['anusmarana kurippu']) }}">anusmarana
                                                 kurippu</a></li>
-                                        <li><a href="{{ route('memorials', ['jeeva charithram']) }}">jeeva charithram</a>
+                                        <li><a href="{{ route('memorials', ['jeeva charithram']) }}">jeeva
+                                                charithram</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="#" class="has dropdown-toggle">Gallery <i
-                                            class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                <li><a href="#" class="has dropdown-toggle">Gallery <i class="fa fa-chevron-down"
+                                            aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('gallery') }}">Images</a></li>
                                         <li><a href="{{ route('videos') }}">Videos</a>
@@ -60,8 +60,8 @@
                                 </li>
                                 {{-- <li><a href="{{ route('gallery') }}"> Gallery </i></a></li>
                                 <li><a href="{{ route('videos') }}"> Videos </i></a></li> --}}
-                                <li><a href="#" class="has dropdown-toggle">Litrature<i
-                                            class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                <li><a href="#" class="has dropdown-toggle">Litrature<i class="fa fa-chevron-down"
+                                            aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('literature', ['poem']) }}">Poem</a></li>
                                         <li><a href="{{ route('literature', ['story']) }}">Story</a></li>
@@ -69,8 +69,8 @@
                                         <li><a href="{{ route('literature', ['book review']) }}">Book review</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#" class="has dropdown-toggle">Elements <i
-                                            class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                                <li><a href="#" class="has dropdown-toggle">Elements <i class="fa fa-chevron-down"
+                                            aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('little') }}"> Little </i></a></li>
                                         <li><a href="{{ route('jana-sangeetham') }}"> Jana Sangeetham </i></a></li>
