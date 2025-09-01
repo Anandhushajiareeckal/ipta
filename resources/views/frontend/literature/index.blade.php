@@ -39,7 +39,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <div class="blog-image">
                                         <a href="{{ route('literature.show', [$item->type, $item->slug]) }}">
-                                            <i class="fa fa-link" aria-hidden="true"></i>
+                                            {{-- <i class="fa fa-link" aria-hidden="true"></i> --}}
                                             <img src="{{ $item->images && count($item->images) ? asset($item->images[0]) : asset('assets/frontend/images/blog/default.jpg') }}" alt="Literature photo">
                                         </a>
                                     </div>

@@ -42,7 +42,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <div class="blog-image">
                                         <a href="{{ route('news.show', $item->slug) }}">
-                                            <i class="fa fa-link" aria-hidden="true"></i>
+                                            {{-- <i class="fa fa-link" aria-hidden="true"></i> --}}
                                             <img src="{{ $item->main_img ? asset($item->main_img) : asset('assets/frontend/images/blog/default.jpg') }}" alt="Blog photo">
                                         </a>
                                     </div>
