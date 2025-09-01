@@ -74,6 +74,7 @@
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('little') }}"> Little </i></a></li>
                                         <li><a href="{{ route('jana-sangeetham') }}"> Jana Sangeetham </i></a></li>
+                                        <li><a href="{{ route('ipta-theatre') }}">IPTA Theatre</i></a></li>
                                     </ul>
                                 </li>
                                 <li><a href="{{ route('contact') }}"> Contact </i></a></li>

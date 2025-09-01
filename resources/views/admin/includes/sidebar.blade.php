@@ -96,6 +96,23 @@
                         <span key="t-ecommerce">Little</span>
                     </a>
                 </li>
+
+                {{-- Jana Sangeetham --}}
+                <li>
+                    <a href="{{ route('admin.jana-sangeetham.index') }}" class="waves-effect">
+                        <i class="bx bx-music"></i>
+                        <span key="t-ecommerce">Jana Sangeetham</span> 
+                    </a>
+                </li>
+                
+                {{-- IPTA Theatre --}}
+                <li>
+                    <a href="{{ route('admin.ipta-theatre.index') }}" class="waves-effect">
+                        <i class="bx bx-tv"></i>
+                        <span key="t-ecommerce">IPTA Theatre</span>
+                    </a>
+                </li>
+
                 {{-- Enquiry --}}
                 <li>
                     <a href="{{ route('admin.enquiry.index') }}" class=" waves-effect">
