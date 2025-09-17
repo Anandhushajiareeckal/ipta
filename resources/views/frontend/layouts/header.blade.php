@@ -1,6 +1,6 @@
 <header>
 
-    <div class="header-bottom-area" id="sticky">
+    <div class="header-bottom-area" id="sticky" style="background: #385592f5 !important;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
@@ -14,21 +14,21 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-                        <div class="col-sm-4 col-xs-4 hidden-desktop text-right search">
+                        {{-- <div class="col-sm-4 col-xs-4 hidden-desktop text-right search">
                             <a href="#search-mobile" data-toggle="collapse" class="search-icon"><i class="fa fa-search"
                                     aria-hidden="true"></i></a>
                             <div id="search-mobile" class="collapse search-box">
                                 <input type="text" class="form-control" placeholder="Search...">
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <div class="main-menu navbar-collapse collapse">
                         <nav>
                             <ul>
                                 <li>
-                                    <div class="logo-area">
-                                        <a href="/"><img src="{{ asset($settings->logo) }}" alt="logo" ></a>
+                                    <div class="logo-area" style="padding: 0px;  margin: -10px;">
+                                        <a href="/"><img src="{{ asset($settings->logo) }}" alt="logo"></a>
                                     </div>
                                 </li>
                                 <li>
