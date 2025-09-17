@@ -44,6 +44,10 @@ Route::get('/memorials/{type}/{slug}', [\App\Http\Controllers\Frontend\MemorialC
 Route::get('/gallery', [App\Http\Controllers\Frontend\GalleryController::class, 'index'])->name('gallery');
 Route::get('/gallery/{slug}', [App\Http\Controllers\Frontend\GalleryController::class, 'show'])->name('gallery.show');
 
+//chithralokam
+Route::get('/chithralokam', [App\Http\Controllers\Frontend\ChithralokamController::class, 'index'])->name('chithralokam');
+Route::get('/chithralokam/{slug}', [App\Http\Controllers\Frontend\ChithralokamController::class, 'show'])->name('chithralokam.show');
+
 //videos
 Route::get('/videos', [App\Http\Controllers\Frontend\VideoController::class, 'index'])->name('videos');
 

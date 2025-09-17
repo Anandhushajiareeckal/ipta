@@ -73,6 +73,13 @@
                         <span key="t-ecommerce">Gallery</span>
                     </a>
                 </li>
+                {{-- Chithralokam --}}
+                <li>
+                    <a href="{{ route('admin.chithralokam.index') }}" class=" waves-effect">
+                        <i class="bx bx-camera"></i>
+                        <span key="t-ecommerce">Chithralokam</span>
+                    </a>
+                </li>
                 {{-- Videos --}}
                 <li>
                     <a href="{{ route('admin.videos.index') }}" class=" waves-effect">

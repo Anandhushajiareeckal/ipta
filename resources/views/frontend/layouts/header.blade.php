@@ -36,10 +36,15 @@
                                 </li>
 
                                 <li><a href="{{ route('about') }}" class="has">About </i></a></li>
-                                <li><a href="{{ route('blog') }}" class="has">Blog </i></a></li>
-                                <li><a href="{{ route('news') }}" class="has">News </i></a></li>
-                                <li><a href="{{ route('events') }}" class="has">Events </i></a></li>
                                 <li><a href="{{ route('culturals') }}" class="has">Culturals </i></a></li>
+                                <li><a href="#" class="has dropdown-toggle">Media <i class="fa fa-chevron-down"
+                                            aria-hidden="true"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ route('blog') }}">Blog</a></li>
+                                        <li><a href="{{ route('news') }}">News</a></li>
+                                        <li><a href="{{ route('events') }}">Events</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="#" class="has dropdown-toggle">Memorials <i
                                             class="fa fa-chevron-down" aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
@@ -54,8 +59,8 @@
                                             aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('gallery') }}">Images</a></li>
-                                        <li><a href="{{ route('videos') }}">Videos</a>
-                                        </li>
+                                        <li><a href="{{ route('videos') }}">Videos</a></li>
+                                        <li><a href="{{ route('chithralokam') }}">Chithralokam</a></li>
                                     </ul>
                                 </li>
                                 {{-- <li><a href="{{ route('gallery') }}"> Gallery </i></a></li>
@@ -77,7 +82,7 @@
                                         <li><a href="{{ route('ipta-theatre') }}">IPTA Theatre</i></a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('contact') }}"> Contact </i></a></li>
+                                {{-- <li><a href="{{ route('contact') }}"> Contact </i></a></li> --}}
                             </ul>
                         </nav>
                     </div>

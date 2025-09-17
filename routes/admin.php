@@ -51,4 +51,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::resource('jana-sangeetham', \App\Http\Controllers\Admin\JanaSangeethamController::class);
     Route::resource('ipta-theatre', \App\Http\Controllers\Admin\IptaTheatreController::class);
+    Route::resource('chithralokam', \App\Http\Controllers\Admin\ChithralokamController::class);
+
 });
