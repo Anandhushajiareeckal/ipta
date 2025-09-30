@@ -611,7 +611,7 @@ ul {
 }
 .header-bottom-area .main-menu ul li a i {
   margin-left: 0px;
-  color: #101010;
+  color: #fff !important;
   font-size: 9px;
 }
 .header-bottom-area .main-menu ul li.active a {
@@ -4946,3 +4946,4 @@ span.cat i {
     transform: scale3D(0, 0, 1);
   }
 }
+

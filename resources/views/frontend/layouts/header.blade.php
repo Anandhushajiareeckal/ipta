@@ -32,12 +32,12 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="/" class="has dropdown-toggle">Home </a>
+                                    <a href="/" class="has dropdown-toggle" style="color: #fff !important;">Home </a>
                                 </li>
 
-                                <li><a href="{{ route('about') }}" class="has">About </i></a></li>
-                                <li><a href="{{ route('culturals') }}" class="has">Culturals </i></a></li>
-                                <li><a href="#" class="has dropdown-toggle">Media <i class="fa fa-chevron-down"
+                                <li><a href="{{ route('about') }}" class="has" style="color: #fff !important;">About </i></a></li>
+                                <li><a href="{{ route('culturals') }}" class="has" style="color: #fff !important;">Culturals </i></a></li>
+                                <li><a href="#" class="has dropdown-toggle" style="color: #fff !important;">Media <i class="fa fa-chevron-down"
                                             aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('blog') }}">Blog</a></li>
@@ -45,7 +45,7 @@
                                         <li><a href="{{ route('events') }}">Events</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#" class="has dropdown-toggle">Memorials <i
+                                <li><a href="#" class="has dropdown-toggle" style="color: #fff !important;">Memorials <i
                                             class="fa fa-chevron-down" aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('memorials', ['anusmarana kurippu']) }}">anusmarana
@@ -55,7 +55,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="#" class="has dropdown-toggle">Gallery <i class="fa fa-chevron-down"
+                                <li><a href="#" class="has dropdown-toggle" style="color: #fff !important;">Gallery <i class="fa fa-chevron-down"
                                             aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('gallery') }}">Images</a></li>
@@ -65,7 +65,7 @@
                                 </li>
                                 {{-- <li><a href="{{ route('gallery') }}"> Gallery </i></a></li>
                                 <li><a href="{{ route('videos') }}"> Videos </i></a></li> --}}
-                                <li><a href="#" class="has dropdown-toggle">Litrature<i class="fa fa-chevron-down"
+                                <li><a href="#" class="has dropdown-toggle" style="color: #fff !important;">Litrature<i class="fa fa-chevron-down"
                                             aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{{ route('literature', ['poem']) }}">Poem</a></li>
@@ -74,10 +74,10 @@
                                         <li><a href="{{ route('literature', ['book review']) }}">Book review</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#" class="has dropdown-toggle">Elements <i class="fa fa-chevron-down"
+                                <li><a href="#" class="has dropdown-toggle" style="color: #fff !important;">Elements <i class="fa fa-chevron-down"
                                             aria-hidden="true"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{ route('little') }}"> Little </i></a></li>
+                                        <li><a href="{{ route('little') }}"> Little IPTA</i></a></li>
                                         <li><a href="{{ route('jana-sangeetham') }}"> Jana Sangeetham </i></a></li>
                                         <li><a href="{{ route('ipta-theatre') }}">IPTA Theatre</i></a></li>
                                     </ul>
